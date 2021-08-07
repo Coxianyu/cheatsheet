@@ -1,0 +1,7 @@
+% dpkg
+
+# 列出一个包的文件 list package file
+dpkg -L <package_name>
+
+# 安装 deb 包
+dpkg -i <package_name.deb>

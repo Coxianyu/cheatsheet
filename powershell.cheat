@@ -1,0 +1,4 @@
+% powershell
+# 避免 powershell 输出太长只有... avoid powershell input too long
+<powershell_command> | ft -auto
+
