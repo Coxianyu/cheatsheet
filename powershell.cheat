@@ -1,4 +1,39 @@
-% powershell
+% powershell,windows
 # 避免 powershell 输出太长只有... avoid powershell input too long
 <powershell_command> | ft -auto
+
+# powershell 启动执行文件 powershell $profile like .bashrc or .zshrc
+gvim $profile
+
+# 从文件中导入模块 import-module from a file
+Import-Module <file.ps1>
+
+#  查看 powershell 脚本运行策略 get powershell exec policy
+Get-ExecutionPolicy
+
+# 设置脚本运行策略 set powershell exec policy
+Set-ExecutionPolicy <policy_list>
+$ policy_list:echo 'AllSigned Bypass Default RemoteSigned Restricted Undefined Unrestricted' | tr ' ' '\n' ---
+
+# 下载文件 download file
+(new-object system.net.webclient).downloadfile('<url>','<path-to-save>')"
+
+# 查看代理设置 get the proxy
+[System.Net.WebRequest]::DefaultWebProxy.GetProxy("<url>")
+
+# 加载托管文件进入内存 load  manage file (exe or dll) to mem
+<assem_var> = [System.Reflection.Assembly]::Load((New-Object System.Net.WebClient).DownloadData('<url>')) 
+
+# 获得托管文件中的类 get manage file class
+<class_var> = <assem_var>.GetType("<namespace_classname>") 
+
+# 获得托管文件中的方法 get manage file method
+<method_var> = <class_var>.GetMethod("<method_name>")
+
+# 执行无参数方法 exec null args method
+<method_var>.Invoke(0,$null)
+
+$ assem_var:echo '$assem'
+$ class_var:echo '$class'
+$ method_var:echo '$method'
 

@@ -1,0 +1,5 @@
+% linxu,windows,pentest_tool
+; amass  查询组织的 ASN 号码， 进而发现 ip 地址段等
+
+# 查询公司 ASN Search: search company ASN number
+amass inet -org <name>

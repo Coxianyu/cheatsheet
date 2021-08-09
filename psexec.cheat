@@ -1,0 +1,5 @@
+% windows,pentest_tool
+# 以另一个用户的身份运行程序  exec program use other user
+psexec64.exe -i -u "<windows_user>" <path-to-exe>
+
+$ windows_user: echo "Administrator System" | tr  ' ' '\n'  ---

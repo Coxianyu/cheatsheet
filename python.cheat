@@ -1,0 +1,10 @@
+% python,linux,windows,language
+
+# python3 启动一个 http 服务器 python3 http server
+python3 -m http.server <port>
+
+# python2 启动一个 http 服务器 python2 http server
+python2 -m SimpleHTTPServer <port>
+
+# python 交互式shell python spawn a Interactive shell
+python -c "import pty;pty.spawn('/bin/bash')"

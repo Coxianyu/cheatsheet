@@ -1,0 +1,10 @@
+% windows,tool
+
+; 只能用于 cmd
+; 需要管理员
+
+# 打开特定ip, 特定端口的防火墙 open windows firewall special port special ipaddress
+netsh advfirewall firewall add rule name="<rule_name>" protocol=<protocol> dir=in localip=<ipaddress> localport=<port> action=allow
+
+# 关闭防火墙 close whole windows firewall
+netsh  advfirewall set allprofiles state off

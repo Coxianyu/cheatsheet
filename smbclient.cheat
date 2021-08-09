@@ -1,0 +1,7 @@
+% windows,linux,tool
+
+# 列出共享 list anyomous folders
+smbclient -N -L \\\\<ipaddress>\\
+
+# connect
+smbclient -N \\\\<ipaddress>\\ -U <username>%<passed>

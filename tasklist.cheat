@@ -1,0 +1,4 @@
+% windows,tool
+
+# list process details
+tasklist /v

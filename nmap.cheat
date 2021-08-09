@@ -1,0 +1,32 @@
+% linux,pentest_tool,nmap
+
+# 快速脚本 fast script
+nmap  -sC -sV -O -n -Pn -p$(nmap -p- --min-rate=1000 -T4 <target_ipaddress> | grep "^[0-9]" | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) <target_ipaddress>
+
+# syn scan
+nmap -sS <target_ipaddress>
+
+# TCP 全连接 TCP full scan
+nmap -sT <target_ipaddress>
+
+# UDP scan
+nmap -sU <target_ipaddress>
+
+# ACK scan 
+nmap -sA <target_ipaddress>
+
+# arp scan
+nmap -sn <target_ipaddress>
+
+# System OS
+nmap -O <target_ipaddress>
+
+# close dns
+nmap -n <target_ipaddress>
+
+# close ping
+nmap -Pn <target_ipaddress>
+
+# use a spetic network interface
+nmap -e <name> <target_ipaddress>
+

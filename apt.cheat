@@ -2,5 +2,3 @@
 # 设置某个包为自动安装 set package auto install
 apt-mark auto <name>
 
-# 寻找某个文件的来源， 类似 yum provides
-apt-file search <path-to-file>

@@ -1,0 +1,4 @@
+% windows,linux,tool
+
+# ruby http server
+ruby -run -e httpd . -p <port>

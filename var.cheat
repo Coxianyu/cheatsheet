@@ -1,16 +1,15 @@
-% var 
-# mac address 显示mac地址
-echo <mac_address>
+% var,linux
+; 本机所有的 mac 地址
 $ mac_address:ip link show | awk '{if($0~/^[0-9]+:/)printf( "%-20s%-20s",$2,$9);else print $2}' --- --column 3
 
-# machine all ip address 本机所有的 ip 地址
-echo <ip_address>
+; machine all ip address 本机所有的 ip 地址
 $ ip_address:ip address | awk 'BEGIN{printf("%-30s%-30s%-30s\n","name","state","ipaddress")}{if($0~/^[0-9]+:/)printf( "%-30s%-30s",$2,$9);if($0~/inet /)print($2);}'| tr -d ':' | cut -d '/' -f 1 --- --column 3 --headers 1
 
-# machine eth0 ip address
-echo <eth0_ipaddress>
-$ eth0_ipaddress ifconfig eth0 | grep 'inet' | awk '{print $2}' | head -1
+; 网卡 eth0 的ip 地址
+$ ens33_ipaddress:ifconfig eth0 2>/dev/null ;if [ $? ];then echo 0; else grep 'inet'|awk '{print $2}' | head -1;fi
 
-# machine ens33 ip address
-echo <ens33_ipaddress>
-$ ens33_ipaddress ifconfig ens33 | grep 'inet'|awk '{print $2}' | head -1
+; 网卡 ens33 的 ip 地址
+$ ens33_ipaddress:ifconfig ens33 2>/dev/null ;if [ $? ];then echo 0; else grep 'inet'|awk '{print $2}' | head -1;fi
+
+; 环境变量列表
+$ env_list: env | cut -d '=' -f 1 | awk '$0="$"$0'

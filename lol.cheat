@@ -1,0 +1,8 @@
+% lol,windows
+
+# windows 下使用 certutil base64 编码或者解码 use certutil encode/decode file
+certutil -<certutil_method> <file>
+$ certutil_method: echo 'encode decode' | tr ' ' '\n' ---
+
+# 使用 bitsadmin 下载文件 use bitsadmin dowload file
+bitsadmin /Transfer <job_name> <url> <path-to-save-file>

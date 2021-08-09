@@ -1,0 +1,22 @@
+% muti,linux
+@ var,linux
+# 给每个行添加前缀 all line add prefix
+awk '$0="<prefix>"$0'
+
+# 每行添加后缀 all line add suffix 
+awk '$0=$0<suffix>'
+#  添加当前目录到 PATH 中 add pwd to PATH
+export PATH="$(pwd):${PATH}"
+
+# 显示当前机器ip地址 view machine ip address
+ifconfig eth0 2>/dev/null 1>&2 &&echo <eth0_ipaddress> || echo <ens33_ipaddress>
+
+# 查看用户 sudo 能做到的事 view user's sudo 
+sudo -l 
+
+% muti,windows
+# 刷新组策略 update group policy
+gpupdate /force
+
+# 查看某个文件或者文件夹的权限 view the priv of file or folder
+icacls.exe <file-path-or-folder-path>

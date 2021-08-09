@@ -1,0 +1,54 @@
+% linux,windows,tool
+
+; gpg 套件， 使用非对称或者密码算法加密和解密文件和消息
+
+# 显示公钥 list public keys
+gpg -k --with-fingerprint --keyid-format 0xlong
+
+# 显示私钥 list secret keys
+gpg -K --with-fingerprint --keyid-format 0xlong
+
+# 导出 ssh 公钥 export ssh public key
+gpg --export-ssh-key <receive_id>
+
+# 导出所有私钥 export all secret key
+gpg -a --export-secret-key <receive_id>
+
+# 导出子密钥 export subkey secret keys
+gpg -a --export-secret-subkey <receive_id>
+
+# 删除私钥 delete secret keys
+gpg --delete-secret-keys <receive_id>
+
+# 删除公钥和私钥 delete public and secret keys
+gpg --delete-secret-and-public-keys <receive_id>
+
+# 解密文件 decrpt file or message
+gpg -d <file>
+
+# 验证签名 verify file or message
+gpg --verify <flie>
+
+# 使用别人的公钥加密消息 encryption flie or message
+gpg -a -e -r <receive_id> <file>
+
+# 签名的同时也加密 sign and encryption file or message
+gpg -a -u <sign_id> -r <receive_id> -e -a -b <file>
+
+# 对称加密和签名 sign and encryption symmetricly
+gpg -a -u <sign_id> -r <receive_id> -c -e <file>
+
+# 计算hash calculation md5/sha-1/sha256/sha512 has
+gpg --print-md <gpg_hash_ciper> <file>
+
+$ gpg_hash_ciper: echo "md5 sha-1 sha512 sha256" | tr ' ' '\n'  ---
+
+; gpg echo receive_id
+;echo <receive_id>
+
+;gpg echo sign_id
+;echo <sign_id>
+
+$ receive_id: gpg -k --with-fingerprint --keyid-format 0xlong | grep uid | awk 'BEGIN{printf("%-20s%-20s\n","uid","email")}{printf("%-20s%-20s\n",$5,$6)}' --- --headers 1 --column 1
+$ sign_id: gpg -K --with-fingerprint --keyid-format 0xlong | grep uid | awk 'BEGIN{printf("%-20s%-20s\n","uid","email")}{printf("%-20s%-20s\n",$5,$6)}' --- --headers 1 --column 1
+

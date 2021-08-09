@@ -1,0 +1,7 @@
+% windows,tool
+
+# 查看用户权限 view windows's user priv
+whoami /priv
+
+# 查看用户组 view windows's 
+whoami /groups

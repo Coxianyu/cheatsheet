@@ -1,0 +1,4 @@
+% python,pentest_tool
+
+# 使用 windows 认证登录 mssql 数据库 use windows user login mssql
+python3 mssqlclient <user>:<passwd>@<ip> --windows-aut

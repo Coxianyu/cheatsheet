@@ -1,0 +1,12 @@
+% linux,tool
+
+; 管理 dhcp
+
+# 释放 ip 地址 Search: release ip address
+dhclient -r
+
+# 向 dhcp 服务器请求 ip 地址 Search: obtain ip address
+dhclient
+
+# 完全刷新缓存 Search: compltely refersh dhclient cache
+rm /var/lib/dhcp/dhclient.leases; dhclient

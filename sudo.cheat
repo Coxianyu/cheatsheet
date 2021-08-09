@@ -1,0 +1,4 @@
+% linux,tool
+
+# 切换用户执行命令 sudo change to other user exec command
+sudo -u <user> <command>

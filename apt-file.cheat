@@ -1,0 +1,5 @@
+% linux,tool
+; 查询某个文件来自于哪个包, 类似与 yum provide
+
+# 查询某个文件来自于哪个包 Search: like yum provide
+apt-file search <path_to_file>

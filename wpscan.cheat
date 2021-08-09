@@ -1,0 +1,4 @@
+% linxu,pentest-tool
+
+# wordpress full scan
+wpscan --url <url> -enumerate ap,at,cb,dbe
