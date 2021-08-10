@@ -1,0 +1,8 @@
+% liunux, tool
+
+# 创建一个 tmux 会话 create tmux session
+tmux new -t "<name>"
+
+# 通过会话名获得会话  get tmux session by name
+tmux a -t "<session_name>"
+$ session_name: tmux ls | cut -d ':' -f 1 ---

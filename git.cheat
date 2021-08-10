@@ -1,0 +1,123 @@
+% linux,windows,tool,git
+
+# 比较工作区与暂存区的差异 diff workspace and staged
+git diff 
+
+# 比较已提交和暂存区的差别 diff commit and staged
+git diff --staged
+
+# git status 简洁输出 git status shortly
+git status -s
+
+# 直接提交已经跟踪的文件 commit all tracked file
+git commit -a
+
+# 从git中删除文件， 同时取消追踪 remove from git and disk
+git rm <file>
+
+# 从git库中删除文件， 但是不在磁盘上删除  just remove git 
+git rm --cached <file>
+
+# 对文件改名 git rename
+git mv <file_from> <file_to>
+
+# 显示 git 日志 show git log
+git log
+
+# 显示 git 日志和每次的变化 show git log patch
+git log -p
+
+# 显示最近提交 show git log recently
+git log -<number>
+
+# 以 ascii 字符串显示分支合并历史 show git log graph
+git log --graph
+
+# 以时间选择提交历史 show git log in a time range
+git log --since=<start-time> --until=<end-time>
+
+#  只显示添加或者删除某个字符串的提交  show git log add or delete a string
+git log -S <string>
+
+# 只显示提交说明中匹配某个字符串的提交 show git log a specific string in commit
+git log --grep <string>
+
+# 不显示 merges 产生的commit show git log no merges
+git log --no-merges
+
+# 提交后未作任何改变可以重新提交，快照不变 recommit when no modify 
+git commit --amend 
+
+# 取消暂存  cancel staged
+git restore --staged <file>
+
+# 恢复为上次提交的状态 rrestore file to last commit
+git checkout -- <file>
+
+# 显示远程仓库 list remote repository
+git remote -v
+
+# 详细显示远程仓库 list remote detail
+git remote shwo <remote>
+
+# 添加远程仓库 add remote repository
+git remote add <name> <url>
+
+# 抓取远程仓库 fetch remote repository
+git fetch <remote>
+
+# 重命名远程仓库 rename remote  repository
+git remote rename <remote> <new_name>
+
+# 删除远程仓库 remote remote repository
+git remote remove <remote> 
+
+$remote:git remote ---
+
+# 查看标签 list tags
+git tag
+
+# 通过通配符显示标签 list tag use wildcard
+git tag -l "<tag_name>"
+
+# 打标签 tag a commit
+git tag -a <version> <comment>
+
+# 显示标签 show tags
+git show <tag_name>
+$tag_name: git tag --- --preview "git show {}"
+
+# 给过去的提交打标签 tags previous commit
+git tag -a <tag-name> <commit-sha256>
+$commit-sha256:git log | grep ^commit | cut -d ' ' -f 2 --- --preview "git show {}"
+
+# 推送一个标签push on tag push on tag
+git push <remote> <tag_name>
+
+# 推送所有标签 pull all tags
+git push --tags
+
+# 删除本地标签 remove tags locally
+git tag -d <tag_name>
+
+# 删除远程标签 remove tags remote
+git push <remote> --delete <tag_name>
+
+# 创建同时切换分支 create and switch branch
+git checkout -b <branch-name>
+
+# 查看各个分支指向的对象 view branch point
+git log --decorate --oneline
+
+# 切换分支 switch to branch:
+git checkout <branch_name>
+$branch_name: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
+
+# 删除分支 remove branch
+git branch -d <branch_name>
+
+# 查看当前分支已经合并的分支 view current branch merged
+git branch --merged
+
+# 查看当前分支没有合并的分支 view current no merged
+git branch --no-merged
