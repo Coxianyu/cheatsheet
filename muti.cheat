@@ -6,6 +6,9 @@ awk '$0="<prefix>"$0'
 # 每行添加后缀 all line add suffix 
 awk '$0=$0<suffix>'
 
+# 显示每行匹配的字符串 show regxp substring
+awk 'match($0, /<regexp>/){ printf("%20s\n",substr($0, RSTART, RLENGTH))}'
+
 #  添加当前目录到 PATH 中 add pwd to PATH
 export PATH="$(pwd):${PATH}"
 

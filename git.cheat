@@ -112,6 +112,9 @@ git log --decorate --oneline
 # 切换分支 switch to branch:
 git checkout <branch_name>
 $branch_name: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
+$from-branch: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
+$to-branch: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
+$diff-branch: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
 
 # 删除分支 remove branch
 git branch -d <branch_name>
@@ -121,3 +124,12 @@ git branch --merged
 
 # 查看当前分支没有合并的分支 view current no merged
 git branch --no-merged
+
+# 删除远程分支 remove remote branch
+git push <remote> --delete <branch_name>
+
+# git 变基 rebase branch
+git rebase <from-branch> <to-branch>
+
+# git 变基特殊分支, 取出 from-branch 分支和 diff-branch 不同的部分变基到 to-branch rebase onto
+git rebase --onto <to-branch> <diff-branch> <from-branch>
