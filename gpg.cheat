@@ -32,10 +32,10 @@ gpg --verify <flie>
 # 使用别人的公钥加密消息 encryption flie or message
 gpg -a -e -r <receive_id> <file>
 
-# 签名的同时也加密 sign and encryption file or message
+# 签名的同时也加密 sign and encryption file or message no symmetricly
 gpg -a -u <sign_id> -r <receive_id> -e -a -b <file>
 
-# 对称加密和签名 sign and encryption symmetricly
+# 对称加密和签名 sign and encryption file or message symmetricly
 gpg -a -u <sign_id> -r <receive_id> -c -e <file>
 
 # 计算hash calculation md5/sha-1/sha256/sha512 has
@@ -48,6 +48,6 @@ gpgconf --kill gpg-agent
 # test echo receive_id
 echo <receive_id>
 
-$ receive_id: gpg -k --with-fingerprint --keyid-format 0xlong | awk 'BEGIN{printf("%-30s %-30s\n","uid","email")} { { if($0~/^pub/) { match($0, /0x[a-z0-9A-Z]+/); { printf("%-30s",substr($0, RSTART, RLENGTH)); } } if($0~/^uid/) { match($0,/ [a-z0-9A-Z].*>$/); { printf("%-30s\n",substr($0, RSTART, RLENGTH)); } } } }' --- --headers 1 --column 1
-$ sign_id: gpg -K --with-fingerprint --keyid-format 0xlong  | awk 'BEGIN{printf("%-30s %-30s\n","uid","email")} { { if($0~/^sec/) { match($0, /0x[a-z0-9A-Z]+/); { printf("%-30s",substr($0, RSTART, RLENGTH)); } } if($0~/^uid/) { match($0,/ [a-z0-9A-Z].*>$/); { printf("%-30s\n",substr($0, RSTART, RLENGTH)); } } } } ' --- --headers 1 --column 1
+$ receive_id: gpg -k --with-fingerprint --keyid-format 0xlong | awk 'BEGIN{printf("%-30s %-30s\n","key-fingerprint","uid")} { { if($0~/^pub/) { match($0, /0x[a-z0-9A-Z]+/); { printf("%-30s",substr($0, RSTART, RLENGTH)); } } if($0~/^uid/) { match($0,/] [a-z0-9A-Z].*$/); { printf("%-30s\n",substr($0, RSTART, RLENGTH)); } } } }'| tr -d ']' --- --headers 1 --column 1
+$ sign_id: gpg -K --with-fingerprint --keyid-format 0xlong  | awk 'BEGIN{printf("%-30s %-30s\n","key-fingerprint","uid")} { { if($0~/^sec/) { match($0, /0x[a-z0-9A-Z]+/); { printf("%-30s",substr($0, RSTART, RLENGTH)); } } if($0~/^uid/) { match($0,/] [a-z0-9A-Z].*$/); { printf("%-30s\n",substr($0, RSTART, RLENGTH)); } } } } ' --- --headers 1 --column 1
 

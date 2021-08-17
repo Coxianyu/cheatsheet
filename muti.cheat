@@ -18,6 +18,9 @@ ifconfig eth0 2>/dev/null 1>&2 &&echo <eth0_ipaddress> || echo <ens33_ipaddress>
 # 查看用户 sudo 能做到的事 view user's sudo 
 sudo -l 
 
+# 修改 hosts 文件 edit hosts file
+vim /etc/hosts
+
 # zsh speed test
 time zsh -i -c exit
 
