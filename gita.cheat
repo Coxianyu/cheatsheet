@@ -1,0 +1,46 @@
+% python,tool,windows,linux
+
+; 用于管理多个 git 仓库的工具
+; pip3 install gita
+
+# 添加仓库到gita add repo(s) to gita
+gita add <repo>
+
+# gita 从配置文件中克隆仓库到当前文件夹内 gita clone repos from config-file to current folder
+gita clone <config-file>
+
+# gita 从配置文件中克隆仓库到配置文件中指定的文件夹内 gita clone repos from config-file to special folder
+gita clone -p <config-file>
+
+# gita 生成配置文件 generate gita config file
+gita freeze > ~/.gita.conf
+
+# 从 gita 中删除仓库 remove repo from gita
+gita rm <repo_name>
+
+# echo gita repo_name
+echo <repo_name>
+
+# 添加仓库到组 add repo to group
+gita group add <repo_name> -n <group>
+
+# 设置 gita 上下文 set gita context
+gita context <group_name>
+
+# 删除上下文 remove gita context
+gita context none
+
+# 从组中删除仓库 remove repo from group
+gita group rmrepo <repo-name> -n <group_name>
+
+# 删除组 remove gita group
+gita group rm <group_name>
+
+# 对仓库执行命令 gita exec command
+gita shell <repo_name> <command>
+
+# echo group_name
+echo gita <group_name>
+
+$ repo_name: gita ls | tr ' ' '\n' ---
+$ group_name: gita group ls | tr ' ' '\n' ---

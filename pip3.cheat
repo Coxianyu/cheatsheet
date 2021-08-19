@@ -1,7 +1,7 @@
 % python,windows,linux,tool
 
 # 升级 pip 自身 upgrade pip3
-pip3 install upgrade pip
+pip3 install --upgrade pip
 
 # 升级所有 python package
 pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U

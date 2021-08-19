@@ -111,6 +111,7 @@ git log --decorate --oneline
 
 # 切换分支 switch to branch:
 git checkout <branch_name>
+
 $branch_name: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
 $from-branch: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
 $to-branch: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
