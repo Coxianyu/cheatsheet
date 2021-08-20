@@ -24,6 +24,9 @@ git mv <file_from> <file_to>
 # 显示 git 日志 show git log
 git log
 
+# 显示签名
+git log --show-signature
+
 # 显示 git 日志和每次的变化 show git log patch
 git log -p
 
@@ -81,7 +84,13 @@ git tag
 git tag -l "<tag_name>"
 
 # 打标签 tag a commit
-git tag -a <version> <comment>
+git tag -a <version> -m <comment>
+
+# 打标签的同时签名  tag and sign a comment
+git tag -s <version> -m <comment>
+
+# 验证 tag 的签名 verify tag sign
+git tag -v <tag_name>
 
 # 显示标签 show tags
 git show <tag_name>
@@ -134,3 +143,73 @@ git rebase <from-branch> <to-branch>
 
 # git 变基特殊分支, 取出 from-branch 分支和 diff-branch 不同的部分变基到 to-branch rebase onto
 git rebase --onto <to-branch> <diff-branch> <from-branch>
+
+# git 应用特定commit 到当前分支上 git cherry-pick
+git cherry-pick <commit_id>
+
+# 交互式 rebase git rebase  interactive
+git rebase -i <commit-ranger>
+
+# git 撤销修改 git resest
+git reset <relative-commit>
+
+# git 撤销修改 git revert
+git revert <relative-commit>
+
+# git 查看引用日志
+git reflog
+
+# git 查看引用日志同时显示对比 git reflog
+git reflog -p 
+
+# 交互式暂存 git add interactive
+git add -i 
+
+# 补丁式添加文件 git add file patched
+git add -p
+
+# git 贮藏修改 git stash
+git stash
+
+#  查看贮藏栈 view git stash
+git stash list
+
+# git 弹出修改 git stash pop
+git stash pop
+
+# git 应用贮藏栈中的修改 git stash apply 
+git stash apply <stash-number>
+$ stash-number: echo 'stash@{1}'
+
+# git 应用贮藏栈中的修改同时恢复暂存文件的状态 git apply stash and tracked
+git stash pop --index
+
+# git 删除贮藏 git remove stash
+git stash drop <stash_name>
+
+# 通过一个贮藏创建一个分支 create a branch from a stash
+git stash branch <new-branch>
+
+# 移除所有没有忽略未追踪的文件 remove all untracked files
+git clean
+
+# 移除所有没有忽略未追踪的文件 remove all untracked and ignore files
+git clean -x
+
+# 查看 git clean 将要益处的文件 view git clena will remove files
+git clean -d -n
+
+# 将所有未追踪的文件放入栈 push all untracked file
+git stash --all
+
+# 对合并提交签名 sign merge sign
+git merge -S
+
+# git reset 同时覆盖工作区 git reset hard workspace
+git reset --hard <commit-sha256>
+
+# git reset 合并提交 git reset merge multi commit
+git reset --soft <number>
+
+# 中断合并 git abort merge
+git merge --abort

@@ -39,6 +39,9 @@ gita group rm <group_name>
 # 对仓库执行命令 gita exec command
 gita shell <repo_name> <command>
 
+# 切换到某个仓库 cd to a repo
+cd $(gita ls <repo_name>)
+
 # echo group_name
 echo gita <group_name>
 

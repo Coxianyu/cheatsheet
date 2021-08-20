@@ -1,4 +1,4 @@
 % windows,tool
 
-# list process details
+# 详细显示进程 list process details
 tasklist /v

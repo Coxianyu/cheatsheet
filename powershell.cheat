@@ -1,5 +1,5 @@
 % powershell,windows
-# 避免 powershell 输出太长只有... avoid powershell input too long
+# 避免 powershell 输出太长只有... avoid powershell output too long
 <powershell_command> | ft -auto
 
 # powershell 启动执行文件 powershell $profile like .bashrc or .zshrc
