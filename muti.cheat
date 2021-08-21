@@ -21,11 +21,14 @@ sudo -l
 # 修改 hosts 文件 edit hosts file
 vim /etc/hosts
 
-# zsh speed test
+# 测试 zsh 启动速度 zsh speed test
 time zsh -i -c exit
 
 # 刷新字体缓存 refersh font cache
 fc-cache
+
+# 创建二维码 create QR code no echo
+curl -F-=\<- qrenco.de
 
 # centos 安装中文语言包 centos install language pack
 yum install <pack_name>

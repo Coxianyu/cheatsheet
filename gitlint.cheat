@@ -1,0 +1,7 @@
+% tool,python,windows,linux
+
+; 检测 commit message 的lint
+
+# 安装为 git 钩子 install gitlint hook
+gitlint install-hook
+
