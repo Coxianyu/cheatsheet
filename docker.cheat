@@ -1,0 +1,15 @@
+% windows,linux,tool
+
+# 从镜像交互运行一个容器 start a container from image interactive
+docker run -it <image_id> <command>
+
+# 交互运行一个一次性容器
+docker run -it --rm <image_id> <command>
+
+# 后台运行一个容器 start a container from image back
+docker run -d <image_id> <command>
+
+
+$ image_id: docker images --- --headers 1 --column 3
+$ container_id: docker ps --- --headers 1 --column 1
+

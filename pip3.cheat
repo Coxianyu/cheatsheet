@@ -3,5 +3,14 @@
 # 升级 pip 自身 upgrade pip3
 pip3 install --upgrade pip
 
-# 升级所有 python package
+# pip3 显示所有已经安装的包 pip list all install package
+pip3 list
+
+# 查看某个包的详细信息 pip3 show package detail
+pip3 show <packagename>
+$ packagename: pip3 list --- --column 1 --headers 1
+# 升级所有 python package upgrade all python package
 pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U
+
+# pip 卸载包 pip uninstall packages
+pip3 uninstall <packagename>

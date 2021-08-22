@@ -39,5 +39,8 @@ $ pack_name: yum search langpacks | cut -d ':' -f 1 --- --headers 1
 # 刷新组策略 update group policy
 gpupdate /force
 
+# 设置 wsl 默认登录的用户 set wsl login default user
+<kali> config --default-user <root>
+
 # 查看某个文件或者文件夹的权限 view the priv of file or folder
 icacls.exe <file-path-or-folder-path>

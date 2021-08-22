@@ -1,0 +1,22 @@
+% tool,windows
+
+; 管理 linux 虚拟机
+
+# 设置默认 wsl 版本为 2 set wsl version to 2
+wsl --set-default-version 2
+
+# 显示 linux 子系统 wsl 版本 view linux system wsl version
+wsl --list --verbose
+
+# 设置 wsl 默认登录的用户 set wsl login user
+<system> config --default-user <usr>
+
+# 设置 linux 子系统 version update wsl linxu version
+wsl --set-version <distribution_name> <versionNumber>
+
+# 关闭子系统 shutdown subsystem
+wsl --shutdown <distribution_name>
+
+# 删除子系统 remove subsystem
+wslconfig /u <distribution_name>
+

@@ -1,0 +1,19 @@
+% kali,linux,muti
+
+# install gnome
+apt install kali-gnore-destop
+
+# switch to gnome
+dpkg-reconfigure gdm3
+
+# remove xface
+apt remove kali-desktop-xfce xfce4* lightdm*
+
+# root login
+apt install kali-root-login
+
+# copyq 
+apt install copyq
+
+# install google-pinyin
+apt install fcitx fcitx-googlepinyin

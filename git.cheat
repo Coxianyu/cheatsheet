@@ -94,7 +94,7 @@ git tag -v <tag_name>
 
 # 显示标签 show tags
 git show <tag_name>
-$tag_name: git tag --- --preview "git show {}"
+$tag_name:git tag --- --preview "git show {}"
 
 # 给过去的提交打标签 tags previous commit
 git tag -a <tag-name> <commit-sha256>
@@ -244,3 +244,21 @@ git clone <file_name> <folder>
 
 # 比较最新版本库和工作区的差异 diff workspace and local repo
 git diff HEAD
+
+# 丢弃工作目录中的所有修改 drop all file change
+git reset --hard HEAD
+
+# 丢弃工作目录中特定文件的修改 drop specific file change
+git checkout HEAD <file> 
+
+# 取消所有文件的暂存 drop all staged file
+git reset HEAD
+
+# git 覆盖远程分支 git push force
+git push --force
+
+# 设置跟踪分支 set tracked branch
+git branch -u <remote> <branch_name>
+
+# 检测空白问题 git diff withespace
+git diff --check
