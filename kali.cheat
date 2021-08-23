@@ -1,19 +1,25 @@
 % kali,linux,muti
 
-# install gnome
+# 安装 gnome 桌面 nstall gnome
 apt install kali-gnore-destop
 
-# switch to gnome
+#  设置系统语言为中文
+dpkg-reconfigure locales
+
+#  设置使用 gnome 桌面 switch to gnome
 dpkg-reconfigure gdm3
 
-# remove xface
+# 删除默认的 xfce 桌面 remove xface
 apt remove kali-desktop-xfce xfce4* lightdm*
 
-# root login
+# 允许 root 登录 root login
 apt install kali-root-login
 
-# copyq 
+# 安装 copyq 
 apt install copyq
 
-# install google-pinyin
+# 安装 fcitx 和 google 拼音 install google-pinyin
 apt install fcitx fcitx-googlepinyin
+
+# 设置使用 google 拼音 set google 拼音
+im-config
