@@ -1,0 +1,59 @@
+% tool,linux
+
+; 查看日志的软件
+
+# 查看所有日志
+
+# 查看这次系统启动的日志 show log about this boot
+journalctl -b
+
+# 根据 unit 显示日志 show log via unit
+journalctl -u <unit_name>
+$ unit_name:journalctl -F '_SYSTEMD_UNIT' 2>/dev/null --- 
+
+# 显示内核日志， 不显示应用日志  show log without applications
+journalctl -k
+
+# 指定日志的时间范围 show log in a time ranger
+journalctl --since="<start-yyyymmddhhmmss>" --until="<end-yyyymmddhhmmss>"
+
+# 显示昨天到现在的日志 show log from  yesterday
+journalctl --since="yesterday"
+
+# 显示某个用户的日志 show log via uid
+journalctl _UID="<UID>"
+
+# 显示某个应用程序的日志 show log via pid
+journalctl _PID="<PID>"
+
+# 根据严重性显示日志 show log via level
+journalctl -p <level> -b 
+$ level: echo "emerg alert crit err warning notice info debug" | tr ' ' '\n' ---
+
+# 显示最近的日志 show lastest log
+journalctl -xe
+
+# 不使用分页器直接输出 show log no pager
+journalctl --no-pager
+
+# 指定输出格式 show log another format
+journalctl -o <format>
+$ format:cat ~/.cache/format_message | awk '{printf("%-20s%-20s\n",$1,$2)}' --- --column 1
+
+; format-message
+; cat: 只显示信息字段本身。
+; export: 适合传输或备份的二进制格式。
+; json: 标准JSON，每行一个条目。
+; json-pretty: JSON格式，适合人类阅读习惯。
+; json-sse: JSON格式，经过打包以兼容server-sent事件。
+; short: 默认syslog类输出格式。
+; short-iso: 默认格式，强调显示ISO 8601挂钟时间戳。
+; short-monotonic: 默认格式，提供普通时间戳。
+; short-precise: 默认格式，提供微秒级精度。
+; verbose: 显示该条目的全部可用journal字段，包括通常被内部隐藏的字段。
+
+# 监视活动进程 show log like tail -f
+journalctl -f
+
+# 显示日志占用空间 show log used disk
+journalctl --disk-usage

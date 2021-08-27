@@ -30,9 +30,15 @@ fc-cache
 # 创建二维码 create QR code no echo
 curl -F-=\<- qrenco.de
 
+# 解决 centos 下 glibc 版本问题
+yum install glibc
+
 # centos 安装中文语言包 centos install language pack
 yum install <pack_name>
 $ pack_name: yum search langpacks | cut -d ':' -f 1 --- --headers 1
+
+# 修改主机名 change hostname
+hostnamectl set-name <name>
 
 % muti,windows
 

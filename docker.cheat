@@ -1,13 +1,22 @@
 % windows,linux,tool
 
 # 从镜像交互运行一个容器 start a container from image interactive
-docker run -it <image_id> <command>
+docker run -it --name <container_name> <image_id> <command>
 
 # 交互运行一个一次性容器
 docker run -it --rm <image_id> <command>
 
 # 后台运行一个容器 start a container from image back
-docker run -d <image_id> <command>
+docker run -d <image_id> <command> 
+
+# 导出容器为镜像 docker export container to image
+docker export <container_id> >> <image_name>
+
+# 导入镜像  docker import a image
+docker import -t <image_name>
+
+# 重命名镜像  docker rename  image  
+docker tag <image_id> <image_name>:<image_tag>
 
 
 $ image_id: docker images --- --headers 1 --column 3

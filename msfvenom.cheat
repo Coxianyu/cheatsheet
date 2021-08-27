@@ -7,5 +7,5 @@ msfvenom -p <msf_payload> LHOST=<ip_address> LPORT=<port> -f <msf_format> -o <pa
 msfvenom  -p <msf_payload> LHOST=<ip_address> LPORT=<port> -b "<avoid_code>" -e <encoder> -i <encode_count> -x <tempelte> -f <msf_format> -o <path-to-save> --encrypt <encrypt_mothod> --encrypt-key "<encrypt_key>"
 
 
-$ msf_payload: cat ~/.msf_txt/payloads.txt --- --headers 1 --column 1
-$ msf_format: cat ~/.msf_txt/format.txt ---  --headers 1
+$ msf_payload: \cat ~/.zsh/venom-cache
+$ msf_format: \cat ~/.msf_txt/format.txt ---  --headers 1
