@@ -12,12 +12,13 @@ docker run -d <image_id> <command>
 # 导出容器为镜像 docker export container to image
 docker export <container_id> >> <image_name>
 
+# 运行容器， 包括创建数据卷和端口映射 run a container with volume and port
+docker run -itd --name <name> -p <ip>:<external-port>:<inside-port> -v <external-path>:<inside-path>:rw <image_id>
 # 导入镜像  docker import a image
 docker import -t <image_name>
 
 # 重命名镜像  docker rename  image  
 docker tag <image_id> <image_name>:<image_tag>
-
 
 $ image_id: docker images --- --headers 1 --column 3
 $ container_id: docker ps --- --headers 1 --column 1
