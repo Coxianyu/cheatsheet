@@ -1,0 +1,18 @@
+% tool,linux
+
+; 从 let‘s encrypt 申请证书
+
+# 续期证书 renew certificate
+acme.sh --renew
+
+# 添加 cron 任务 add acme cron task
+acme.sh --cron
+
+# 申请证书 apply for cert
+acme.sh  --issue  -d <domain>   --webroot  <path-to-root>
+
+# 在测试环境中申请证书 apply for cert with test
+acme.sh  --issue  -d <domain>  --webroot  <path-to-root> --test  --staging
+
+# 安装证书 install cert
+acme.sh --install-cert -d <domain> --key-file   <path-to> --fullchain-file <path-to>  --reloadcmd <cmd>

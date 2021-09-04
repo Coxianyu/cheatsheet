@@ -40,6 +40,9 @@ $ pack_name: yum search langpacks | cut -d ':' -f 1 --- --headers 1
 # 修改主机名 change hostname
 hostnamectl set-name <name>
 
+# 在终端显示图片 show picture in terminal need imagemagick
+chafa <picture_name>
+
 % muti,windows
 
 # 刷新组策略 update group policy
