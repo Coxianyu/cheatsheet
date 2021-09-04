@@ -2,8 +2,8 @@
 
 ; 从 let‘s encrypt 申请证书
 
-# 续期证书 renew certificate
-acme.sh --renew
+# 续期所有证书 renew all certificate
+acme.sh --renew-all
 
 # 添加 cron 任务 add acme cron task
 acme.sh --cron
@@ -15,4 +15,13 @@ acme.sh  --issue  -d <domain>   --webroot  <path-to-root>
 acme.sh  --issue  -d <domain>  --webroot  <path-to-root> --test  --staging
 
 # 安装证书 install cert
-acme.sh --install-cert -d <domain> --key-file   <path-to> --fullchain-file <path-to>  --reloadcmd <cmd>
+acme.sh --install-cert -d <domain> --key-file <path-to-filename>-cert.pem --fullchain-file <path-to-filename>-key.pem  --reloadcmd <cmd>
+
+# 注册 ca 账户 register ca account
+acme.sh --register-account -m <email>
+
+# 删除证书 remove cert
+acme.sh remove <domain> && rm -fr ~/.acme.sh/<domain>
+
+# 设置默认 CA 为 let's encrypt set default is letsencrypt
+acme.sh --set-default-ca  --server  letsencrypt
