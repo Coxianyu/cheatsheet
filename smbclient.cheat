@@ -1,7 +1,8 @@
 % windows,linux,tool
+@ var,linux
 
 # 列出共享 list anyomous folders
-smbclient -N -L \\\\<ipaddress>\\
+smbclient -N -L \\\\<target_ip>\\
 
 # connect
-smbclient -N \\\\<ipaddress>\\ -U <username>%<passed>
+smbclient -N \\\\<target_ip>\\ -U <username>%<passed>

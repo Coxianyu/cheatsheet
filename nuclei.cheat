@@ -1,0 +1,7 @@
+% tool,golang
+
+# 下载和升级模板， download and update template
+nuclei --update-template
+
+# 使用一个 tag下的模板扫描 scan use a tag
+nuclei -u <url> -t <tag>

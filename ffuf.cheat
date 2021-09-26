@@ -1,0 +1,6 @@
+% tool, golang, fuzz
+
+; 快速的 Web fuzzer 器
+
+#  递归爆破所有目录,跟踪重定向 brust dir and fllow redirect
+ffuf -u $URL/FUZZ -w $(fd ~/dict | fzf) -r --recursion

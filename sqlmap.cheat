@@ -1,0 +1,4 @@
+% tool
+
+# sqlmap 从文件中导入 sqlmap import file
+sqlmap -r <file_name>

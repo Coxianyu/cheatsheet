@@ -43,6 +43,9 @@ hostnamectl set-name <name>
 # 在终端显示图片 show picture in terminal need imagemagick
 chafa <picture_name>
 
+# 计算一个文件的行数 calculate a file lines
+cat <file> | wc -l
+
 % muti,windows
 
 # 刷新组策略 update group policy

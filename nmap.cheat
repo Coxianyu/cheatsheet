@@ -30,3 +30,4 @@ nmap -Pn <target_ipaddress>
 # use a spetic network interface
 nmap -e <name> <target_ipaddress>
 
+$ target_ipaddress: echo $target_ip
