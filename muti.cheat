@@ -6,6 +6,9 @@ awk '$0="<prefix>"$0'
 # 每行添加后缀 all line add suffix 
 awk '$0=$0<suffix>'
 
+# cut 分割字符串 split string use cut
+cut -d <char> -f <number>
+
 # 显示每行匹配的字符串 show regxp substring
 awk 'match($0, /<regexp>/){ printf("%20s\n",substr($0, RSTART, RLENGTH))}'
 
@@ -15,9 +18,18 @@ export PATH="$(pwd):${PATH}"
 # 显示当前机器ip地址 view machine ip address
 ifconfig eth0 2>/dev/null 1>&2 &&echo <eth0_ipaddress> || echo <ens33_ipaddress>
 
+# 使用 base64 解码 base64 decode in linux
+echo <code> | base64 -d
+
 # 查看用户 sudo 能做到的事 view user's sudo 
 sudo -l 
 
+
+# wget 下载不进行检查 wget download file without certificate check
+wget <url> --no-check-certificate
+
+# curl 下载文件不进行证书检查 culr download file without certificate check
+curl <url>  -k
 # 修改 hosts 文件 edit hosts file
 vim /etc/hosts
 

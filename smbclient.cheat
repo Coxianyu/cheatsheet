@@ -2,7 +2,10 @@
 @ var,linux
 
 # 列出共享 list anyomous folders
-smbclient -N -L \\\\<target_ip>\\
+smbclient -N -L //$TARGET_IP/
 
-# connect
-smbclient -N \\\\<target_ip>\\ -U <username>%<passed>
+# 列出当前帐号能够查看的共享 list current user folders
+smbclient -L //$TARGET_IP/ -U <username>%<password>
+
+# 连接 smb 服务器, 像 ftp 一样使用 connect smb server use like ftp
+smbclient //$TARGET_IP/ -U <username>%<password>

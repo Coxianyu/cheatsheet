@@ -1,0 +1,7 @@
+% tool,linux
+
+# 查看所有进程 list all process
+ps aux
+
+# 树形查看所有进程 list all process in a tree
+ps -lA

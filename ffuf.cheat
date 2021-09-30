@@ -3,4 +3,7 @@
 ; 快速的 Web fuzzer 器
 
 #  递归爆破所有目录,跟踪重定向 brust dir and fllow redirect
-ffuf -u $URL/FUZZ -w $(fd ~/dict | fzf) -r --recursion
+ffuf -u $TARGET_URL/FUZZ -w $(fd . "$HOME/dict" | fzf) -r --recursion
+
+# 爆破虚拟主机 fuzz VirtualHost
+ffuf -w $(fd . "$HOME/dict" | fzf) -u <url> -H "Host: FUZZ.<domain>" -acc "www"

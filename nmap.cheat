@@ -1,33 +1,31 @@
 % linux,pentest_tool,nmap
 
 # 快速脚本 fast script
-nmap  -sC -sV -O -n -Pn -p$(nmap -p- --min-rate=1000 -T4 <target_ipaddress> | grep "^[0-9]" | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) <target_ipaddress>
+nmap -A -sC -sV -O -n -Pn -p$(nmap -p- --min-rate=1000 -T4 $TARGET_IP | grep "^[0-9]" | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//) $TARGET_IP 
 
 # syn scan
-nmap -sS <target_ipaddress>
+nmap -sS $TARGET_IP
 
 # TCP 全连接 TCP full scan
-nmap -sT <target_ipaddress>
+nmap -sT $TARGET_IP
 
 # UDP scan
-nmap -sU <target_ipaddress>
+nmap -sU $TARGET_IP
 
 # ACK scan 
-nmap -sA <target_ipaddress>
+nmap -sA $TARGET_IP
 
 # arp scan
-nmap -sn <target_ipaddress>
+nmap -sn $TARGET_IP
 
 # System OS
-nmap -O <target_ipaddress>
+nmap -O $TARGET_IP
 
 # close dns
-nmap -n <target_ipaddress>
+nmap -n $TARGET_IP
 
 # close ping
-nmap -Pn <target_ipaddress>
+nmap -Pn $TARGET_IP
 
 # use a spetic network interface
-nmap -e <name> <target_ipaddress>
-
-$ target_ipaddress: echo $target_ip
+nmap -e <name> $TARGET_IP

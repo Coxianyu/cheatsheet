@@ -15,4 +15,4 @@ $ ens33_ipaddress:ifconfig ens33 2>/dev/null ;if [ $? ];then echo 0; else grep '
 $ env_list: env | cut -d '=' -f 1 | awk '$0="$"$0'
 
 ; 目标 IP
-$ target_ip: echo $target_ip
+$ target_ip: echo $TARGET_IP

@@ -1,0 +1,11 @@
+% tool,linux
+
+# searchsploit fast script
+nmap $TARGET_IP -p- -sV -oX /tmp/test.xml; searchsploit --nmap /tmp/test.xml
+# 读取 nmap 文件 read nmap xml file
+searchsploit --nmap <xml_file>
+
+# 将 poc 移动到当前目录
+searchsploit -m <number>
+
+$ xml_file: ls /tmp/*.xml ---

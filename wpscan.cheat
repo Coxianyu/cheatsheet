@@ -1,4 +1,7 @@
 % linxu,pentest-tool
 
 # wordpress full scan
-wpscan --url <url> -enumerate ap,at,cb,dbe
+wpscan --url <url>
+
+# wordpress full scan without ssl check
+wpscan --url <url> --disable-tls-checks
