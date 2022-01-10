@@ -16,7 +16,7 @@ awk 'match($0, /<regexp>/){ printf("%20s\n",substr($0, RSTART, RLENGTH))}'
 export PATH="$(pwd):${PATH}"
 
 # 显示当前机器ip地址 view machine ip address
-ifconfig eth0 2>/dev/null 1>&2 &&echo <eth0_ipaddress> || echo <ens33_ipaddress>
+hostname -I
 
 # 使用 base64 解码 base64 decode in linux
 echo <code> | base64 -d
@@ -24,6 +24,9 @@ echo <code> | base64 -d
 # 查看用户 sudo 能做到的事 view user's sudo 
 sudo -l 
 
+
+# 定位函数定义的文件 locate define function postion
+whence -v <function_name>
 
 # wget 下载不进行检查 wget download file without certificate check
 wget <url> --no-check-certificate
@@ -57,6 +60,15 @@ chafa <picture_name>
 
 # 计算一个文件的行数 calculate a file lines
 cat <file> | wc -l
+
+# 将多个空格替换为一个 mutil space to one space
+sed 's/ */ /g'
+
+# 删除空行 remove space line
+sed '/^$/d'
+
+# sql udf so pick
+python3 $(locate cloak.py) -d -i $(fd . --full-path "/usr/share/sqlmap/data/udf" -t f | fzf) -o <file_name>
 
 % muti,windows
 

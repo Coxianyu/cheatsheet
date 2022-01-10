@@ -1,7 +1,7 @@
 % kali,linux,muti
 
 # 安装 gnome 桌面 nstall gnome
-apt install kali-gnore-destop
+apt install kali-desktop-gnome
 
 #  设置系统语言为中文
 dpkg-reconfigure locales
@@ -21,5 +21,5 @@ apt install copyq
 # 安装 fcitx 和 google 拼音 install google-pinyin
 apt install fcitx fcitx-googlepinyin
 
-# 设置使用 google 拼音 set google 拼音
+# 设置使用 google 拼音 set google pinyin
 im-config

