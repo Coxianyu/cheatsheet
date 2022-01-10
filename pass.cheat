@@ -1,0 +1,18 @@
+% tool,linux
+
+; 命令行管理密码的软件
+ 
+# 创建用户 create a user, username 需要在 gpg 中有用户标识
+ pass init <username>
+
+# 插入密码 insert password
+pass insert <path_to_username>
+
+# 生产一组随机的密码,n 为密码位数 generate redom password
+pass generate <path_to_username> <n>
+
+
+# 列出已有的密码
+pass ls
+# 取得密码 get password
+pass <path_to_username>
