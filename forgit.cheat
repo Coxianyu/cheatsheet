@@ -1,0 +1,43 @@
+% tool,linux,forgit
+
+; 使用 fzf 来进行一些git功能
+
+# 使用 fzf 添加文件 git add by using fzf
+ga
+
+# 使用 fzf 查看 git log view git log use fzf
+glo
+
+# 生产 .gitignore 文件 generator .gitignore
+gi
+
+# 使用 fzf 进行 git diff  git diff use fzf
+gd
+
+# 使用 fzf 将文件从暂存区中去除 
+grh
+
+# 使用 fzf 恢复文件到 HEAD 状态 git checkout <file>
+gcf
+
+# 使用 fzf 选择分支 git checkout <branch>
+gcb
+
+# 使用 fzf 选择标签 git checkout <tag>
+gct
+
+# 使用 fzf 选择commit git checkout commit
+gco
+
+# 使用 fzf 选择查看 stash 暂存的文件
+gss
+
+# 使用 fzf 运行 git clean 功能
+gclean
+
+# 使用 fzf 进行 git cherry-pick 功能
+gcp
+
+# 使用 fzf 选择 git rebase -i 的范围
+grb
+

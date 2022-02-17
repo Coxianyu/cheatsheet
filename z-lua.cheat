@@ -1,0 +1,12 @@
+% linux,windows,z.lua
+
+; 用于快速在历史路径中跳
+
+# jf foo 使用 fzf 交互选择到达过的路径
+jf
+# jbf foo 使用 fzf 选择父目录
+jbf
+# jh  使用 fzf 选择最近的 10 条路径
+jh
+# jc 跳转到当前路径下的子目录
+jc

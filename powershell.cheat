@@ -16,7 +16,7 @@ Set-ExecutionPolicy <policy_list>
 $ policy_list:echo 'AllSigned Bypass Default RemoteSigned Restricted Undefined Unrestricted' | tr ' ' '\n' ---
 
 # 下载文件 download file
-(new-object system.net.webclient).downloadfile('<url>','<path-to-save>')"
+(new-object system.net.webclient).downloadfile('<url>','<path-to-save>')
 
 # 查看代理设置 get the proxy
 [System.Net.WebRequest]::DefaultWebProxy.GetProxy("<url>")

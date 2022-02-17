@@ -16,3 +16,4 @@ pass generate <path_to_username> <n>
 pass ls
 # 取得密码 get password
 pass <path_to_username>
+

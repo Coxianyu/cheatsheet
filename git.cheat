@@ -119,14 +119,6 @@ git checkout -b <branch-name>
 # 查看各个分支指向的对象 view branch point
 git log --decorate --oneline
 
-# 切换分支 switch to branch:
-git checkout <branch_name>
-
-$branch_name: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
-$from-branch: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
-$to-branch: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
-$diff-branch: git branch -v | tr -d '\*' | awk 'BEGIN {printf("%-20s%-20s%-20s\n","branch_name","commit_sha","commit")}{printf("%-20s%-20s%-20s\n",$1,$2,$3)}' --- --headers 1 --column 1
-
 # 删除分支 remove branch
 git branch -d <branch_name>
 
@@ -268,3 +260,15 @@ git format-patch <commit>
 
 # 应用 patch apply patch
 git apply <pathch-file>
+
+# 清除没有 tracked 的文件, 不会删除 .gitignore 中的文件
+git clean -f
+
+# 清除没有 tracked 的文件， 包括 .gitignore 中的文件
+git clean -fx
+
+# 创建分支， 不跳转
+git branch <branch_name>
+
+# 创建分支， 跳转
+git checkout -b <branch_name>
