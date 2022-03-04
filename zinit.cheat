@@ -1,0 +1,4 @@
+% tool,linux
+
+# 多线程升级插件
+zinit update --parallel 40
