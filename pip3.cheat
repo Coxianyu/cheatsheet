@@ -14,3 +14,6 @@ pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n
 
 # pip 卸载包 pip uninstall packages
 pip3 uninstall <packagename>
+
+# pip  升级某个包
+pip  install --upgrade <packagename>

@@ -35,3 +35,6 @@ alias-search
 
 # 查询函数定义
 whence -f <function_name>
+
+# 解决 windows 下没有 pip 的问题
+python -m ensurepip
