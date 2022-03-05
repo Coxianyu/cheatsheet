@@ -45,7 +45,7 @@ git reset <relative-commit>
 # git 撤销修改 git revert
 git revert <relative-commit>
 
-# git 查看引用日志
+# git 查看头指针移动日志
 git reflog
 
 # git 查看引用日志同时显示对比 git reflog
