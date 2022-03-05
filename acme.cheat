@@ -25,3 +25,6 @@ acme.sh remove <domain> && rm -fr ~/.acme.sh/<domain>
 
 # 设置默认 CA 为 let's encrypt set default is letsencrypt
 acme.sh --set-default-ca  --server  letsencrypt
+
+# 查看已经申请的证书
+acme.sh --list
