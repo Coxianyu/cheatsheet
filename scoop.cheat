@@ -1,0 +1,12 @@
+% tool, windows
+
+; windows 下的包管理器
+
+# 安装软件
+scoop instaall <pack-name>
+
+# 升级软件
+scoop update --all
+
+# 设置代理
+scoop config proxy <host:port>
