@@ -1,4 +1,4 @@
-% windows
+% windows, win+r
 
 ; windows win+r 键备忘录
 
@@ -111,3 +111,68 @@ services.msc
 wmimgmt.msc
 
 
+
+; 以下内容截取自 Shell Commands List for Windows 10. (不详). 取读于 2022年3月22日, 从 https://www.tenforums.com/tutorials/3109-shell-commands-list-windows-10-a.html?s=7a2e0ba26d755f9ad53ac2347aceb76a
+
+# 用户启动文件夹
+shell:startup
+
+# windows 开机启动项位置
+; C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+shell:Common Startup
+
+# window 软件数据存放位置 appData 文件夹
+; %AppData%
+shell:AppData
+
+# 另一处存放数据文件的位置
+;C:\ProgramData
+shell:Common AppData
+
+# 开始菜单文件存放处
+;C:\ProgramData\Microsoft\Windows\Start Menu
+shell:Common Start Menu
+
+
+# ie 浏览器 Cookie 存放处
+; C:\Users\1234\AppData\Local\Microsoft\Windows\INetCookies
+shell:Cookie
+
+# 当前用户的桌面
+shell:desktop
+
+# windows 字体存储位置
+; C:\Windows\Fonts
+shell:Fonts
+
+# windows 打开过的文件
+; C:\Users\1234\AppData\Local\Microsoft\Windows\History
+shell:History
+
+# 用户家目录
+;%UserProfile%
+shell:Profile
+
+# windows 公用文件夹
+; C:\Users\Public
+shell:Public
+
+# 当前用户最近使用过的文件
+; C:\Users\1234\AppData\Roaming\Microsoft\Windows\Recent
+shell:Recent
+
+# window System32 
+;C:\Windows\System32
+shell:System
+
+# windows System64
+; C:\Windows\SysWOW64
+shell:SystemX86
+
+# 类似 linux 上的 /home 目录
+; C:\Users
+shell:UserProfiles
+
+# windows 文件夹
+; C:\Windows
+shell:Windows
