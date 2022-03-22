@@ -5,6 +5,19 @@
 # 屏幕键盘
 osk
 
+# 网络连接页面
+ncpa.cpl 
+
+# 软件安装和卸载页面
+appwiz.cpl
+
+# 本地用户管理和组管理
+lusrmgr.msc
+
+# 防火墙
+firewall.cpl 
+
+
 # 计算机管理
 compmgmt.msc
 
@@ -47,8 +60,11 @@ Sndvol
 # 懂得都懂
 nslookup
 
-# 系统属性窗口
+# 系统属性窗口, 环境变量和远程桌面配置
 sysdm.cpl
+
+# window 计划管理程序， 类似与 at 和 crontab
+taskschd.msc
 
 # 打开远程桌面
 mstsc
@@ -173,6 +189,31 @@ shell:SystemX86
 ; C:\Users
 shell:UserProfiles
 
+# 类似 /home 目录
+..
+
+# 家目录
+.
+
+# 临时目录文件
+%temp%.
+
+# C:\Windows
+%systemroot%.
+
 # windows 文件夹
 ; C:\Windows
 shell:Windows
+
+
+; 以下内容部分取自 IK4 ▷➡️. 《Comandos Win+R (Ejecutar) para Windows 10 que es útil conocer》, 2021年4月6日. https://ik4.es/comandos-winr-ejecutar-para-windows-10-que-es-util-conocer/.
+
+# 打开 msinfo32.exe 可以详细查看系统信息
+msinfo32.exe
+
+# 资源监视器，用于查看内存占用等
+resmon.exe
+
+# 性能监视器
+perfmon.exe
+
