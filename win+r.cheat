@@ -1,0 +1,113 @@
+% windows
+
+; windows win+r 键备忘录
+
+# 屏幕键盘
+osk
+
+# 计算机管理
+compmgmt.msc
+
+# 组策略
+gpedit.msc
+
+# 任务管理器
+taskmgr
+
+# 控制面板
+control
+
+# windows 控制台
+mmc
+
+# 注册表
+regedit
+
+# 查看服务
+services.msc
+
+# window 版本
+winver
+
+# 设备管理器
+devmgmt.msc
+
+# 查看磁盘
+diskmgmt.msc
+
+# 系统配置实用工具
+msconfig
+
+# 本地安全策略
+secpol.msc
+
+# 音量控制程序
+Sndvol
+
+# 懂得都懂
+nslookup
+
+# 系统属性窗口
+sysdm.cpl
+
+# 打开远程桌面
+mstsc
+
+# 管理控制台
+mmc
+
+# 证书管理
+certmgr.msc
+
+# 索引服务程序
+ciadv.msc
+
+# 组件服务
+comexp.msc
+
+# 计算机管理
+compmgmt.msc
+
+# 设备管理器
+devmgmt.msc
+
+# 磁盘碎片整理程序
+dfrg.msc
+
+# 磁盘管理
+diskmgmt.msc
+
+# 事件查看器
+eventvwr.msc
+
+# 共享文件夹管理器
+fsmgmt.msc
+
+# 组策略管理器（本地组策略编辑器）
+gpedit.msc
+
+# 本机用户和组
+lusrmgr.msc
+
+# 移动存储管理器
+ntmsmgr.msc
+
+# 移动存储管理员操作请求
+ntmsoprq.msc
+
+# 性能监视器
+perfmon.msc
+
+# 组策略结果集
+rsop.msc
+
+# 本地安全策略
+secpol.msc
+
+# 本地服务设置
+services.msc
+
+# windows管理体系结构WMI（控制台根节点\WMI控件）
+wmimgmt.msc
+
+
