@@ -1,0 +1,8 @@
+% tool,linux
+
+; 改写 git 历史
+
+
+
+# 从 git 历史中删除某一个文件
+git filter-branch --tree-filter 'rm -f <file>' HEAD

@@ -23,3 +23,8 @@ docker tag <image_id> <image_name>:<image_tag>
 $ image_id: docker images --- --headers 1 --column 3
 $ container_id: docker ps --- --headers 1 --column 1
 
+# 进入容器 docker enter container
+docker exec -it <container_id> '<command>'
+
+# 查看容器日志
+docker logs <container_id>

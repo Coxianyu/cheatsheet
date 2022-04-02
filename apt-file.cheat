@@ -3,3 +3,6 @@
 
 # 查询某个文件来自于哪个包 Search: like yum provide
 apt-file search <path_to_file>
+
+# 查询某个软件包的内容
+apt-file list <package_name>

@@ -1,0 +1,51 @@
+%tool,linux
+
+
+; 用 gpg 给文件加密
+# 初始化 blackbox
+blackbox_initialize
+
+# 添加管理员公钥
+blackbox_addadmin <gpg-key-id>
+
+# 将文件添加到 blackbox
+blackbox_register_new_file <file>
+
+# 列出 blackbox 中的文件
+blackbox_list_files
+
+# 从 blackbox 中删除文件
+blackbox_deregister_file <file>
+
+# 解密文件以便更改 
+balckbox_edit_start <file>
+
+# 加密文件保存修改
+blackbox_edit_end <file>
+
+# 解密文件 
+blackbox_decrypt_file <file>
+
+# 比较文件的修改
+blackbox_diff
+
+# 解密编辑文件后再加密文件
+blackbox_edit <file>
+
+# 交互式解密所有文件
+blackbox_decrypt_all_files
+
+# 解密所有文件 
+blackbox_postdeploy
+
+# 移除密钥
+blackbox_removeadmin <gpg-key>
+
+# 删除所有解密的文件
+blackbox_shred_all_files
+
+# 重新加密所有托管的文件, 一般用于更新密钥后
+blackbox_update_all_files
+
+# 从托管文件中删除文件
+blackbox_deregister_file <file>
