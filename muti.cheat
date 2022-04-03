@@ -1,8 +1,5 @@
 % muti,linux
 @ var,linux
-# 给每个行添加前缀 all line add prefix
-awk '$0="<prefix>"$0'
-
 
 # 创建符号链接
 ln -s  <path-to-file> <path-to-symbol>
@@ -10,8 +7,13 @@ ln -s  <path-to-file> <path-to-symbol>
 # nvim 加载任何插件启动
 nvim -u NONE -N
 
-# 每行添加后缀 all line add suffix 
-awk '$0=$0<suffix>'
+# 格式化占位符号, example:echo -e '1;one\n2;two' | column -t -s'key'
+column -t -s'<key>'
+#  删除特定行
+sed '/<regxp>/d'
+
+# 每行添加前缀或者后缀
+sed 's/.*/<prefix>&<suffix>/'
 
 # cut 分割字符串 split string use cut
 cut -d <char> -f <number>

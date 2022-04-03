@@ -1,0 +1,42 @@
+% systemctl, linux 
+
+; linux 中用于管理后台服务的程序
+
+# 启动服务
+systemctl start <service_inactive>
+
+# 停止服务
+systemctl stop <service_active>
+
+# 设置服务开机启动
+systemctl enable <service_disabled>
+
+# 取消服务开机启动
+systemctl disable <service_enabled>
+
+# 重新启动服务
+systemctl restart <service_active>
+
+# 查看服务状态
+systemctl status <service>
+
+# 重新加载服务， 一般用于添加了服务后
+systemctl daemon reload
+
+# 显示正在运行的服务
+systemctl list-unit --type=service --state=running
+
+; systemclt 中没有启动的服务
+$ service_inactive: systemctl list-units --type=service --state=inactive | awk '{print $1}' | grep .service | sed 's/.service$//'
+
+;systemctl 中启动的服务
+$ service_active: systemctl list-units --type=service --state=active | awk '{print $1}' | grep .service | sed 's/.service$//'
+
+;systemctl 中开机自启动的服务
+$ service_enabled: systemctl list-unit-files --type=service --state=enabled | awk '{print $1}' | grep .service | sed 's/.service$//'
+
+; systemctl 中不是开机自启动的服务
+$ service_disabled: systemctl list-unit-files --type=service --state=disabled | awk '{print $1}' | grep .service | sed 's/.service$//'
+
+;所有服务
+$ service: systemctl list-units --type=service --all | awk '{print $1}' | grep .service | sed 's/.service$//'

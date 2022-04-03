@@ -1,5 +1,6 @@
 % windows,linux,tool
 
+@ var.cheat
 # 从镜像交互运行一个容器 start a container from image interactive
 docker run -it --name <container_name> <image_id> <command>
 
@@ -13,15 +14,14 @@ docker run -d <image_id> <command>
 docker export <container_id> >> <image_name>
 
 # 运行容器， 包括创建数据卷和端口映射 run a container with volume and port
-docker run -itd --name <name> -p <ip>:<external-port>:<inside-port> -v <external-path>:<inside-path>:rw <image_id>
+docker run -itd --name <name> -p <ip_address>:<external-port>:<inside-port> -v <external-path>:<inside-path>:rw <image_id> <command>
+
 # 导入镜像  docker import a image
 docker import -t <image_name>
 
 # 重命名镜像  docker rename  image  
 docker tag <image_id> <image_name>:<image_tag>
 
-$ image_id: docker images --- --headers 1 --column 3
-$ container_id: docker ps -a --- --headers 1 --column 1
 
 # 进入容器 docker enter container
 docker exec -it <container_id> '<command>'
@@ -31,3 +31,7 @@ docker logs <container_id>
 
 # docker 终端显示颜色
 docker exec  -it -e "TERM=xterm-256color" <container_id> '<command>'
+
+
+# 删除所有的容器
+docker rm -f $(docker ps -aq)

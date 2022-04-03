@@ -1,0 +1,53 @@
+% linux, tool
+
+; ripgrep 相比于 grep 性能更高
+
+# 基本搜索, 当然也可以通过标准输入传入搜索的内容， 
+rg <key_word> <path_to_file_dir>
+
+# --hidden 用于搜索隐藏文件和文件夹
+rg <key_word> <path_to_file> --hidden
+
+
+# --text 用于搜索二进制文件
+rg <key_word> <path_to_file> --text
+
+# --follow 用于跟随符号链接
+rg <key_word> <path_to_file> --follow
+
+# --no-ignore 将不再忽略 .gitignore 中的内容
+rg <key_word> <path_to_file> --no-ignore
+
+
+# -g 可以指定 linux 匹配模式，example rg key -g './*.c'
+rg <key_word> -g <linux_glob>
+
+# -t 可以指定需要搜索的文件类型
+rg <key_word> <path_to_file_dir> -t <filetype>
+
+# -T 可以排除文件类型
+rg <key_word> <path_to_file_dir> -T <filetype>
+
+# --type-list 显示 rg 内建的文件类型
+rg  --type-list
+
+# --type_add 可以添加需要的文件类型， example: rg key --type_add 'web:*.{html,css,js}' -t web
+rg <key_word> --type-add '<name>:<glob>' -t <name>
+
+# -r 将匹配的关键词替换
+rg <key_word> <path_to_file_dir> -r <key_replace>
+
+# -i 忽略大小写
+rg <key_word> <path_to_file_dir> -i
+
+# -c 显示匹配的行数, 不显示匹配的行
+rg <key_word> <path_to_file_dir> -c
+
+# -z 搜索 zip 文件
+rg <key_word> <path_to_zip> -z 
+
+# --debug 显示debug 信息， 可以知道为何一个文件没有被搜索
+rg <key_word> <path_to_file_dir> --debug
+
+# -N 不显示行号
+rg <key_word> <path_to_file_dir> -N

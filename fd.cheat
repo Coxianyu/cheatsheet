@@ -1,0 +1,39 @@
+% tool,linux
+
+@ var,linux
+
+; find 的替代品
+
+# 基本搜索
+fd <key_word> <path_to_dir>
+
+# -R 类似 ls -R 显示目录下的所有文件
+fd <key_word> <path_to_dir> -R
+
+# -g 完全匹配， 只会显示完全匹配的文件
+fd <key_word> <path_to_dir> -g
+
+# -H 搜寻 . 文件夹
+fd <key_word> <path_to_dir> -H
+
+# -I 搜寻 .gitignore 中忽略的文件夹
+fd <key_word> <path_to_dir> -I
+
+# -p 只会显示连路径也匹配的文件
+fd -p <key_word> <path_to_dir> 
+
+# -d 设置搜索的层数
+fd -d <number> <key_word> <path_to_dir>
+
+# --type 匹配 linux 下对应的文件类型
+fd <key_word> <path_to_dir> --type=<linux_filetype>
+
+# -x 用于执行命令， 将匹配的文件执行相同的命令, 命令可以使用类似 {} 的模板
+fd <key_word> <path_to_dir> -x <command_and_template>
+
+$ key_word: echo ". ." | tr ' ' '\n'
+
+$ command_and_template: echo -e '模板;含义\n{};会被替换为完整路径\na{.};完整路径没有文件拓展名\na{/};文件名字加拓展名\na{//};完整路径去除文件名和拓展名\na{/.};只有文件名'| column -t -s';' --- --column 1 --header-lines 1
+
+# -e 用于设置过滤文件拓展名
+fd <key_word> <path_to_dir> -e <ext>

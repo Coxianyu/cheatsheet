@@ -1,0 +1,13 @@
+% tool,linux
+
+; cat 的替代品
+
+# 输出原始内容， 不添加行号等
+bat --plain <file>
+
+
+# 显示不可打印字符
+bat -A
+
+# 不使用分页器
+bat --page=never

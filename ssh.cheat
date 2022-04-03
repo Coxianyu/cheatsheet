@@ -1,7 +1,7 @@
 % tool,windows,linux
 
 # ssh 本地端口转发，将本地流量转发到远程 ssh local port forward   local_listen_port -->remote_port  via ssh_server
-ssh -fNg -L <local_listen_port>:<remote_ip><remote_port> <user>@<ssh_server> -p <ssh_login_server_port>
+ssh -fNg -L <local_listen_port>:<remote_ip>:<remote_port> <user>@<ssh_server> -p <ssh_login_server_port>
 
 # 特殊的本地端口转发 local_listen_port ---> ssh_server:remote_port
 ssh -fNg -L <local_listen_port>:localhost:<remote_port> <user>@<ssh_server> -p <ssh_login_server_port>

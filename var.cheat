@@ -1,12 +1,26 @@
 % var,linux
+
 ; 本机所有的 mac 地址
 $ mac_address:ip link show | awk '{if($0~/^[0-9]+:/)printf( "%-20s%-20s",$2,$9);else print $2}' --- --column 3
 
 ; 本机所有的 ip 地址, 排除环回地址
-$ip_address:hostname -I | tr ' ' '\n' 
+$ip_address:hostname -I |  sed 's/.*/& 0.0.0.0/'| tr ' ' '\n' | sed '/^$/d'
 
 ; 环境变量列表
 $ env_list: env | cut -d '=' -f 1 | awk '$0="$"$0'
 
 ; 目标 IP
 $ target_ip: echo $TARGET_IP
+
+; docker 镜像 id
+$ image_id: docker images --- --headers 1 --column 3
+
+; docker 容器 id
+$ container_id: docker ps -a --- --headers 1 --column 1
+
+; linux 文件类型
+$ linux_filetype: echo '文件类型  含义 af  文件 ad  目录 as  套接字 ap  管道文件 al  链接文件' | tr 'a' '\n'  ---  --headers 1 --column 1
+
+; 设置 key:value 键
+$ foo: echo -e 'key;description\none;1\ntwo;2\nthree;3' | column -t -s';' --- --column 1 --header-lines 1
+
