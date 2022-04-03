@@ -3,6 +3,13 @@
 # 给每个行添加前缀 all line add prefix
 awk '$0="<prefix>"$0'
 
+
+# 创建符号链接
+ln -s  <path-to-file> <path-to-symbol>
+
+# nvim 加载任何插件启动
+nvim -u NONE -N
+
 # 每行添加后缀 all line add suffix 
 awk '$0=$0<suffix>'
 
@@ -48,9 +55,27 @@ curl -F-=\<- qrenco.de
 # 解决 centos 下 glibc 版本问题
 yum install glibc
 
+# 删除文件或者标准输入的前 n 行 
+tail -n +<number>
+
+# 删除文件的后 n 行
+head -n -<number>
+
+# 删除标准输入的任意行 , 如果是文件, 添加 -i
+sed '<number>,<number>d'
+
+# 删除行首的空格
+sed 's/^ *//'
+
+# 删除行尾的空格
+sed 's/[ \t]*$//g'
+
 # centos 安装中文语言包 centos install language pack
 yum install <pack_name>
 $ pack_name: yum search langpacks | cut -d ':' -f 1 --- --headers 1
+
+# ubuntu 中文包
+apt install language-pack-zh-hans
 
 # 修改主机名 change hostname
 hostnamectl set-name <name>
@@ -80,3 +105,5 @@ gpupdate /force
 
 # 查看某个文件或者文件夹的权限 view the priv of file or folder
 icacls.exe <file-path-or-folder-path>
+
+

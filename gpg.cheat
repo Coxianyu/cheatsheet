@@ -51,3 +51,6 @@ echo <receive_id>
 $ receive_id: gpg -k --with-fingerprint --keyid-format 0xlong | awk 'BEGIN{printf("%-30s %-30s\n","key-fingerprint","uid")} { { if($0~/^pub/) { match($0, /0x[a-z0-9A-Z]+/); { printf("%-30s",substr($0, RSTART, RLENGTH)); } } if($0~/^uid/) { match($0,/] [a-z0-9A-Z].*$/); { printf("%-30s\n",substr($0, RSTART, RLENGTH)); } } } }'| tr -d ']' --- --headers 1 --column 1
 $ sign_id: gpg -K --with-fingerprint --keyid-format 0xlong  | awk 'BEGIN{printf("%-30s %-30s\n","key-fingerprint","uid")} { { if($0~/^sec/) { match($0, /0x[a-z0-9A-Z]+/); { printf("%-30s",substr($0, RSTART, RLENGTH)); } } if($0~/^uid/) { match($0,/] [a-z0-9A-Z].*$/); { printf("%-30s\n",substr($0, RSTART, RLENGTH)); } } } } ' --- --headers 1 --column 1
 
+
+# 指定 gpg 的家目录
+gpg --home  <path-to-dir>

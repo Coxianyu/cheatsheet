@@ -21,10 +21,13 @@ docker import -t <image_name>
 docker tag <image_id> <image_name>:<image_tag>
 
 $ image_id: docker images --- --headers 1 --column 3
-$ container_id: docker ps --- --headers 1 --column 1
+$ container_id: docker ps -a --- --headers 1 --column 1
 
 # 进入容器 docker enter container
 docker exec -it <container_id> '<command>'
 
 # 查看容器日志
 docker logs <container_id>
+
+# docker 终端显示颜色
+docker exec  -it -e "TERM=xterm-256color" <container_id> '<command>'
