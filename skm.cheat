@@ -1,0 +1,38 @@
+% tool,linux
+
+; linux 下的 ssh 密钥管理器
+
+
+# 初始化 skm 仓库
+skm init
+
+
+# 创建一个新的 ssh 密钥
+skm create <key_name> -C "<user@host>"
+
+# 列出拥有的密钥
+skm ls
+
+# 使用某个密钥
+skm use <key_name>
+
+# 删除 ssh 密钥
+skm delete <key_name>
+
+# 显示公钥
+skm display <key_name>
+
+# 复制当前使用的公钥到远程主机
+skm cp <user>@<host>
+
+# 重命名密钥
+skm rn <old_name> <new_name>
+
+# 将当前使用的密钥缓存到 ssh 代理中, 就不再需要输入 key 的密码
+skm cache --add <key_name>
+
+# 将当前使用的密钥从代理中删除
+skm cache --del <key_name>
+
+# 显示当前 ssh 缓存中的密钥
+skm cache --list

@@ -1,0 +1,39 @@
+% tool,linux
+
+; 单二进制的备份文件的软件
+
+# 创建备份仓库
+restic init -r <path_to_storage>
+
+# 向备份仓库中添加数据
+restic -r <path_to_storage> backup <path_to_dir>
+
+# -n 选项仅仅输入测试， 不会运行
+restic -n
+
+# 列出某个存储库中的所有快照
+restic -r <path_to_storage> snapshots
+
+# 比较两个快照之间的差异
+restic -r <path_to_storage> diff <ID> <ID>
+
+# 检查存储库的完整行
+restic -r <path_to_storage> check
+
+# 从存储库中恢复文件
+restic -r <path_to_storage>  restore <ID> --target <path_to_restore>
+
+# 恢复单个文件或者目录
+restic -r <path_to_storage> restore <ID> --target <path_to_restore> --include <path_to_dir_or_file>
+
+# 查看某个快照包含的文件, ID 可以用 latest 代替
+restic -r <path_to_restore> ls <ID>
+
+# 在某个快照包含的文件中搜索需要的文件
+restrict -r <path_to_storage> find <ID> <filename>
+
+# 挂载备份文件
+restic -r <path_to_storage> mount <path_to_mount>
+
+# 将备份文件输出到 stdout
+restic -r <path_to_storage> dump <ID> <file_name> 

@@ -1,0 +1,6 @@
+% linux,tool
+
+; 基本全部由 zsh 编写的 http 服务器
+
+# 启动服务器
+czhttpd -v -p <port> <file_or_dir>

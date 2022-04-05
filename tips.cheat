@@ -42,5 +42,8 @@ whence -f <function_name>
 # 解决 windows 下没有 pip 的问题
 python -m ensurepip
 
-# 生成 navi 以及其他应用程序的 cache
+# 生成 navi 以及其他应用程序的 需要的cache文件
 make-cache
+
+# <c-h> 返回上级目录
+<c-h>

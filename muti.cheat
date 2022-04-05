@@ -108,4 +108,8 @@ gpupdate /force
 # 查看某个文件或者文件夹的权限 view the priv of file or folder
 icacls.exe <file-path-or-folder-path>
 
+# 使用 gpg 加密文件或者文件夹
+gpg-encrypt <file_or_dir> <public_key_id>
 
+# 使用 gpg 解密文件或者文件夹
+gpg-decrypt <file>
