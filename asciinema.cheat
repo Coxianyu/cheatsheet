@@ -1,0 +1,27 @@
+% linux,tool
+
+; 用于录制终端的命令
+
+# 开始录制终端
+asciinema rec <filename>.cast
+
+
+# 两倍数播放
+asciinema play -i <filename>
+
+
+# 将录制上传到 asciinema.org
+asciinema upload <filename>
+
+# 录制过程中 <Ctrl+p> 会暂停录制
+<ctrl+p>
+
+# 退出录制
+exit
+
+
+# 从网络播放录制内容
+asciinema play <http_url>
+
+# 添加录音
+asciinema rec --append <filename>

@@ -1,0 +1,6 @@
+% linux,tool
+
+; linux 中用于创建符号链接或者硬链接的工具
+
+# 创建符号链接, 可以使用相对路径
+ln -s <path_to_file> <path_to_link>

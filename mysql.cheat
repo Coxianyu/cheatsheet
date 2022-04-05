@@ -1,7 +1,10 @@
 % tool,linux,windows
 
+@ var,linux
 # 使用用户名和密码登录 mysql login local
 mysql -u <user> -p<passwd>
 
 #  使用用户名和密码登录远程 mysql mysql login remotely
-mysql -u <user> -p -h <hostname>
+mysql -u <user> -p -h <ip_address> -P <port>
+
+
