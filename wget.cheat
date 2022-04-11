@@ -1,0 +1,12 @@
+%linux, toole
+
+; 经典的 linux 下命令行下载工具
+
+# 基本使用
+wget <url>
+
+# 不对https证书进行验证
+wget <url> --no-check-certificate
+
+# 重定向内容到另一个文件, - 表示标准输出
+wget -O <file> <url>

@@ -45,11 +45,14 @@ $ gpg_hash_ciper: echo "md5 sha-1 sha512 sha256" | tr ' ' '\n'  ---
 # 关闭 gpg-agent 进程 kill gpg-agent
 gpgconf --kill gpg-agent
 
-# test echo receive_id
-echo <receive_id>
-
 $ receive_id: gpg -k --with-fingerprint --keyid-format 0xlong | awk 'BEGIN{printf("%-30s %-30s\n","key-fingerprint","uid")} { { if($0~/^pub/) { match($0, /0x[a-z0-9A-Z]+/); { printf("%-30s",substr($0, RSTART, RLENGTH)); } } if($0~/^uid/) { match($0,/] [a-z0-9A-Z].*$/); { printf("%-30s\n",substr($0, RSTART, RLENGTH)); } } } }'| tr -d ']' --- --headers 1 --column 1
 $ sign_id: gpg -K --with-fingerprint --keyid-format 0xlong  | awk 'BEGIN{printf("%-30s %-30s\n","key-fingerprint","uid")} { { if($0~/^sec/) { match($0, /0x[a-z0-9A-Z]+/); { printf("%-30s",substr($0, RSTART, RLENGTH)); } } if($0~/^uid/) { match($0,/] [a-z0-9A-Z].*$/); { printf("%-30s\n",substr($0, RSTART, RLENGTH)); } } } } ' --- --headers 1 --column 1
 
 # 指定 gpg 的家目录
 gpg --home  <path-to-dir>
+
+# 编辑密钥
+gpg --edit-key <receive_id>
+
+# 导出公钥
+gpg  -a --export <receive_id> 

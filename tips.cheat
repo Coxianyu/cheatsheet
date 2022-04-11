@@ -45,5 +45,14 @@ python -m ensurepip
 # 生成 navi 以及其他应用程序的 需要的cache文件
 make-cache
 
-# <c-h> 返回上级目录
-<c-h>
+# alt+up 返回上级目录
+<alt+up>
+
+# alt+down 进入下级目录
+<alt+down>
+
+# 设置 SSH_AUTH_SOCK 为 ssh agent
+SSH_SOCK
+
+# 设置 SSH_AUTH_SOCK 为 gpg agent
+GPG_SOCK

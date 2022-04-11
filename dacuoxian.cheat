@@ -1,0 +1,9 @@
+%linux, tool
+
+; 快速切换 host 文件
+
+# 将 host 文件添加到 /etc/hosts
+dacuoxian <file>
+
+# 从 /etc/hosts 中禁用某个 host 文件
+dacuoxian  disable <flle>

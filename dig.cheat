@@ -1,0 +1,6 @@
+% linux, tool
+
+; linux 下进行 dns 查询的工具
+
+# 查询目标域名的 axfr 记录
+dig -t axfr <domain>

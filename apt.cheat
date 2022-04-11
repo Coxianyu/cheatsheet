@@ -2,3 +2,6 @@
 # 设置某个包为自动安装 set package auto install
 apt-mark auto <name>
 
+# 清除不需要的软件依赖
+apt autoremove
+

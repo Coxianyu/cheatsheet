@@ -1,0 +1,5 @@
+% tool
+
+# 连接到 redis
+redis-cli -h <host> -p <port> -a "password"
+

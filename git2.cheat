@@ -176,7 +176,7 @@ git push --set-upstrean <remote_manche> <branch_name>
 git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git log --author="$name" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s ", add, subs, loc }' -; done
 
 # 强制远程分支覆盖本地分支
-git reset --hard origin/master
+git reset --hard FETCH_HEAD
 
 
 # git log 显示每次添加或者删除的代码行数

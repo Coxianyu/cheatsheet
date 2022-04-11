@@ -1,0 +1,9 @@
+%linux, tool
+
+; 同样也是 linux 经典的命令行下载工具
+
+# 基本用法
+curl <url>
+
+# 不验证 https 证书
+curl <url> -k
