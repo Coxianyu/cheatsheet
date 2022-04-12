@@ -35,3 +35,13 @@ docker exec  -it -e "TERM=xterm-256color" <container_id> '<command>'
 
 # 删除所有的容器
 docker rm -f $(docker ps -aq)
+
+# 将 yubikey 映射到容器中
+docker run -it  \
+    -v /dev/bus/usb:/dev/bus/usb \
+    -v /sys/bus/usb/:/sys/bus/usb/ \
+    -v /sys/devices/:/sys/devices/ \
+    -v /dev/:/dev/ \
+    --privileged \
+    <image_id> \
+    <command>

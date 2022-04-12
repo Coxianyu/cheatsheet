@@ -12,6 +12,12 @@ column -t -s'<key>'
 #  删除特定行
 sed '/<regxp>/d'
 
+# tab 转空格
+sed 's/\t/ /g'
+
+# 显示 linux 发行版 logo
+screenfetch
+
 # 每行添加前缀或者后缀
 sed 's/.*/<prefix>&<suffix>/'
 
