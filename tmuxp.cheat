@@ -1,0 +1,10 @@
+%tool, tmux, 
+
+
+; 类似与 tmuxinator , 也是一个 tmux 布局管理的工具, 但是由 python 编写
+
+# 加载一个布局文件
+tmuxp load -s <session_name> <session_file>
+
+
+$ session_file: ls ${HOME}/.tmuxp/

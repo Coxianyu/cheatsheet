@@ -5,3 +5,12 @@ apt-mark auto <name>
 # 清除不需要的软件依赖
 apt autoremove
 
+# 下载某个包的 deb 文件
+apt download <name>
+
+# 解压缩 deb 包, 然后可以自己使用里面的二进制文件
+dpkg -x <name> <dir>
+
+
+# 下载某个包的源码, 然后使用 gcc 或者 make 自己编译
+apt source <name>

@@ -1,0 +1,29 @@
+% tool,linux
+
+; python 虚拟环境管理
+
+
+# pyenv 编译 python 环境, 包管理器为 apt
+apt install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+# pyenv 包管理器为 yum
+yum install gcc zlib-devel bzip2 bzip2-devel readline-devel \
+sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel
+
+# 刷新 pyenv 环境
+pyenv rehash
+
+# 安装特定版本的 python
+pyenv instlall <python_version>
+
+# 显示详细的python 编译过程
+pyenv install -v <python_version>
+
+# 切换 python 环境
+pyenv global <version>
+
+$ version: pyenv version | sed 's/* //g' --- --column 1
+
+$ python_version: pyenv install -l

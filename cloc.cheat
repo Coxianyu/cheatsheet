@@ -1,0 +1,4 @@
+% linux,tool
+
+; 用于统计代码行数的工具
+cloc <path_or_file>

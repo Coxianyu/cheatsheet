@@ -1,8 +1,44 @@
 % liunux, tool
 
+
+# 当前 tmux 的prefix
+<c-z>
 # 创建一个 tmux 会话 create tmux session
 tmux new -t "<name>"
 
 # 通过会话名获得会话  get tmux session by name
 tmux a -t "<session_name>"
 $ session_name: tmux ls | cut -d ':' -f 1 ---
+
+# tmux 分竖屏
+<prefix>%
+
+# 窗口选择
+<prefix>w
+
+# 下载插件
+<prefix>I
+
+# 使用 fzf 选择窗口
+<prefix>s
+
+# 重命名当前 pane
+tmux select-pane -T "<name>"
+
+# 重命名当前窗口
+tmux rename-window "<name>"
+
+# 重命名当前会话
+tmux reanme-window "<name>"
+
+# 全屏当前 pane
+<prefix>z
+
+# 保存 tmux session 
+<prefix>ctrl+x
+
+# 载入 tmux session
+<prefix>ctrl+r
+
+# 调整 pane 大小
+<prefix><ctrl>+<方向键>

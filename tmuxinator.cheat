@@ -1,0 +1,6 @@
+%linux, tool
+
+; 用于启动特殊格式的 tmux 布局
+tmuxinator new <config_name>
+
+$ config_name: ls ${HOME}/.config/tmuxinator
