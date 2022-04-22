@@ -1,0 +1,7 @@
+% tool, linux 
+
+
+; 轻量的 类似于 github 的系统
+
+# 启动 gogs 
+gogs web

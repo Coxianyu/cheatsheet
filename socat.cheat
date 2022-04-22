@@ -1,0 +1,26 @@
+%linux, tool
+
+; 用于端口转发的工具
+
+
+# 基本格式
+socat <parm> <address1> <address2>
+
+# 一个全交互的 shell -- server
+socat socat TCP-LISTEN:<port>,fork,reuseaddr  EXEC:/usr/bin/bash,pty,stderr,stdout
+
+# 一个全交互的 shell --  client
+socat file:`tty`,raw,echo=0 TCP:<ip>:<port>
+
+# 传输文件, 接受方
+socat -u TCP-LISTEN:<port> open:<filename>,create
+
+# 传输文件, 发送方
+socat -u open:<filename> TCP:<ip>:<port>
+
+
+# 内网穿透,  外部主机 traffic: listen_port --> map_port --> inside_port
+socat tcp-listen:<listen_port> tcp-listen:<map_port>
+
+# 内网穿透, 内部主机 traffic: listen_port --> map_port --> inside_port
+socat tcp:<external_ip><map_port> tcp:<inside_ip>:<inside_port>

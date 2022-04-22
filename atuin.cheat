@@ -1,0 +1,15 @@
+%tool, linux
+
+; linux 下使用 sqlite3 保存历史命令的程序
+
+# 搜寻历史命令
+atuin search <key_word> 
+
+# 同步历史命令
+atuin sync
+
+# 注册同步服务器
+atuin register -u <USERNAME> -e <EMAIL> -p <PASSWORD>
+
+# 同步历史文件
+autin sync
