@@ -77,3 +77,18 @@ de
 
 # 创建 docker 符号链接
 symbol-link
+
+# 使用 ${EDITOR} 编辑 ~/.zshrc
+vimzsh
+
+# 使用 ${EDITOR} 编辑 init.vim
+vimconfig
+
+#  编辑 tmux.conf
+vimtmux
+
+# 使用 fzf kill 进程
+fkill
+
+# docker-compose 设置需要的 docker 文件的映射
+docker_link

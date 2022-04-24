@@ -1,0 +1,34 @@
+% tool, linux
+@ var, linux
+
+; 启动多个 docker 容器的工具
+
+# 使用当前文件夹下的 docker-compose.yaml 文件启动容器
+docker-compose up
+
+# 在后台使用当前文件夹下的 docker-compose.yaml 文件启动容器
+docker-compose up -d
+
+# 使用一个路径的 docker-compose.yaml 启动容器
+docker-compose -f <path_to_file> up
+
+# 删除一个 docker-compose.yaml 中指定的所有容器
+docker-compose down
+
+# 通知 docker-compose.yaml 中的所有容器
+docker-compose stop
+
+# 启动 docker-compose.yaml 定义的所有容器, 不重新创建容器
+docker-compose up -d --no-recreate
+
+# 启动 docker-compose.yaml 中定义的所有容器
+docker-compose start
+
+# 列出 docker-compose.yaml 中定义的所有容器
+docker-compose ps -a
+
+# 显示 docker-compose.yaml 使用的镜像
+docker-compose images
+
+# 进入容器执行命令
+docker-compose exec <container_id> <command>
