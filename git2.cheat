@@ -68,7 +68,7 @@ git stash pop
 
 # git 应用贮藏栈中的修改 git stash apply 
 git stash apply <stash-number>
-$ stash-number: echo 'stash@{0}'
+$ stash-number: git stash list | column -t -s':' --- --column 1
 
 # git 应用贮藏栈中的修改同时恢复暂存文件的状态 git apply stash and tracked
 git stash pop --index

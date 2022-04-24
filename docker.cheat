@@ -29,6 +29,9 @@ docker exec -it <container_id> '<command>'
 # 查看容器日志
 docker logs <container_id>
 
+# 跟踪容器日志, 同时显示时间
+docker logs -f -t <container_id>
+
 # docker 终端显示颜色
 docker exec  -it -e "TERM=xterm-256color" <container_id> '<command>'
 
@@ -45,3 +48,15 @@ docker run -it  \
     --privileged \
     <image_id> \
     <command>
+
+# 从容器中拷贝数据到主机中
+docker cp <container_id>:<path_to_copy_dir_or_file> <host_path_to_destination>
+
+# 从主机拷贝数据到容器中
+docker cp <host_path_to_copy_dir_or_file> <container_id>:<path_to_destination>
+
+# 进行容器的提交
+docker commit -a "<commiter_name>" -m "<commit_message>" <container_id> <my_image_name>:<version_number>
+
+# 查看容器的端口映射
+docker port <container_id>

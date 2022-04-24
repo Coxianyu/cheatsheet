@@ -39,8 +39,14 @@ gpg -a -u <sign_id> -r <receive_id> -e -a -b <file>
 gpg -a -u <sign_id> -r <receive_id> -c -e <file>
 
 # 计算文件hash， 字符串 hash 可以通过标准输入设置 calculation md5/sha-1/sha256/sha512 hash
-gpg --print-md <gpg_hash_ciper> <file>
-$ gpg_hash_ciper: echo "md5 sha-1 sha512 sha256" | tr ' ' '\n'  ---
+gpg --print-md <gpg_hash_ciper> <file> | tr 'A-Z' 'a-z' | sed 's/ //g'
+
+
+$ gpg_hash_ciper: echo -e  "算法名字\nmd5\nsha-1\nsha512\nsha256" | column -t -s';'  --- --column 1 --headers 1
+
+# 计算字符串 hash
+echo -e  "<string>"  | gpg --print-md <gpg_hash_ciper> | tr 'A-Z' 'a-z' | sed 's/ //g'
+
 
 # 关闭 gpg-agent 进程 kill gpg-agent
 gpgconf --kill gpg-agent
