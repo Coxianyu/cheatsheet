@@ -95,7 +95,7 @@ chafa <picture_name>
 cat <file> | wc -l
 
 # 将多个空格替换为一个 mutil space to one space
-sed 's/ */ /g'
+sed 's/[ ][ ]*/ /g'
 
 # 删除空行 remove space line
 sed '/^$/d'

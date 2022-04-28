@@ -1,0 +1,12 @@
+% tool,sqlite
+
+; 记录一些常用的 sqlite 语句
+
+# 打开 sqlite 数据库
+sqlite3 <filename>
+
+# 列出表
+.table
+
+# 查看表结构
+.schema <table_name>

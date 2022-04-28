@@ -3,7 +3,7 @@
 # 安装 gnome 桌面 nstall gnome
 apt install kali-desktop-gnome
 
-#  设置系统语言为中文
+# debain 系设置系统语言为中文
 dpkg-reconfigure locales
 
 #  设置使用 gnome 桌面 switch to gnome

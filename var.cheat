@@ -21,6 +21,9 @@ $ container_id: docker ps -a --- --headers 1 --column 1
 ; linux 文件类型
 $ linux_filetype: echo '文件类型  含义 af  文件 ad  目录 as  套接字 ap  管道文件 al  链接文件' | tr 'a' '\n'  ---  --headers 1 --column 1
 
+; docker volume name
+$ volume_name: docker volume ls | sed 's/[ ][ ]*/;/g' | column -t -s';' --- --column 2 --headers 1
+
 ; 设置 key:value 键
 $ foo: echo -e 'key;description\none;1\ntwo;2\nthree;3' | column -t -s';' --- --column 1 --header-lines 1
 

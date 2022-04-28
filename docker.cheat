@@ -60,3 +60,18 @@ docker commit -a "<commiter_name>" -m "<commit_message>" <container_id> <my_imag
 
 # 查看容器的端口映射
 docker port <container_id>
+
+# 创建有名数据卷
+docker volume create <volume_custome_name>
+
+# 查看所有的数据卷
+docker volume ls
+
+# 查看一个数据卷的具体信息
+docker volume inspect <volume_name>
+
+# 删除一个数据卷
+docker volume rm <volume_name>
+
+# 清除无主的数据卷
+docker volume prune

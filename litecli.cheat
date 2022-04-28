@@ -1,0 +1,11 @@
+# tool,python
+
+; sqlite 的 python 客户端, 带高亮和语法提示
+
+
+# 基本用法
+litecli <filename>
+
+
+# 直接执行 sql 语句
+litecli <filename> -e <sql_query>
