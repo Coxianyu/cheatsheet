@@ -21,7 +21,7 @@ systemctl restart <service_active>
 systemctl status <service>
 
 # 重新加载服务， 一般用于添加了服务后
-systemctl daemon reload
+systemctl daemon-reload
 
 # 显示正在运行的服务
 systemctl list-unit --type=service --state=running

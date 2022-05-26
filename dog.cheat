@@ -1,0 +1,17 @@
+% tool,linux,dns
+
+; dig 的替代品, 用于查询 dns
+
+# 基本用法
+dog <domain>
+# 查询 A 记录
+dog <domain> A
+
+# 查询 mx 记录
+dog <domain> MX
+
+# 指定特殊的服务器
+dog <domain> @<dns_name>
+
+# 查询 soa
+dog <domain> SOA

@@ -9,3 +9,5 @@ ssh -fNg -L <local_listen_port>:localhost:<remote_port> <user>@<ssh_server> -p <
 # ssh 远程端口转发, 将远程流量转发到本地  ssh remote port forward 
 ssh -fNg -R  <local_listen_port>:<remote_ip>:<remote_port>  user@<ssh_server> -p <ssh_login_server_port>
 
+#  pem 格式转换为 ssh-rsa 类似的格式
+ssh-keygen -f <file> -i -mPKCS8

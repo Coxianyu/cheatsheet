@@ -21,5 +21,8 @@ apt install copyq
 # 安装 fcitx 和 google 拼音 install google-pinyin
 apt install fcitx fcitx-googlepinyin
 
+# 安装所有的 fcitx 输入法
+apt install fcitx-table-all
+
 # 设置使用 google 拼音 set google pinyin
 im-config

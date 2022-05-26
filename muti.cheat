@@ -18,6 +18,12 @@ sed 's/\t/ /g'
 # 显示 linux 发行版 logo
 screenfetch
 
+# 添加个人公钥到当前用户的 auth 文件中 ssh key
+curl https://github.com/coxianyu.keys | head -n 1 >> ${HOME}/.ssh/authorized_keys
+
+# 导入个人的公钥 public key
+curl https://github.com/coxianyu.gpg -k | gpg --import
+
 # 每行添加前缀或者后缀
 sed 's/.*/<prefix>&<suffix>/'
 

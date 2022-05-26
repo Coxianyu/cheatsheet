@@ -1,0 +1,6 @@
+% windows, linux, tool
+
+; openssl 用于使用密码算法
+
+# 生成 dh 参数, openssl 使用
+openssl dhparam -out <file_name> -text <count_of_bit>

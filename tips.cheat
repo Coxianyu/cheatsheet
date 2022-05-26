@@ -92,3 +92,6 @@ fkill
 
 # docker-compose 设置需要的 docker 文件的映射
 docker_link
+
+# 用于设置 ssh 服务器, 关闭密码登录, 打开公钥登录
+my-ssh-config
