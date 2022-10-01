@@ -3,10 +3,10 @@
 ; 用于快速在历史路径中跳转
 
 # jf foo 使用 fzf 交互选择到达过的路径
-di
-# jbf foo 使用 fzf 选择父目录
-je
-# jh  使用 fzf 选择最近的 10 条路径
 dh
+# jbf foo 使用 fzf 选择父目录
+de
+# jh  使用 fzf 选择最近的 10 条路径
+dw
 # jc 跳转到当前路径下的子目录
 dc
