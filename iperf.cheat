@@ -1,0 +1,10 @@
+% tool,linux
+
+
+; 测试网络 tcp 和 udp 丢包率
+
+# 被测试机器上监听 tcp 端口
+iperf -p <port> -s -i 1
+
+# 测试机器上发送 tcp 数据包
+iperf -c <ipaddress> -p <port>  -b <size-of-packet> -t <time> -i 1 -P <number-of-thread> 
