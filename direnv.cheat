@@ -1,0 +1,12 @@
+%tool,linux
+; 自动加载和卸载环境变量
+; 环境变量需要设置在 '.envrc' 文件中
+
+# 允许加载 .envrc 文件
+direnv allow
+
+# 禁止加载 .envrc 文件
+direvn deny
+
+# 重新加载 .envrc 文件
+direnv reload

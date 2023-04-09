@@ -1,0 +1,9 @@
+% tool,mysql
+
+; mysql 客户端 带语法提示和高亮
+
+# 用特定用户连接 mysql
+mycli -u <user> -p <password>
+
+# 连接一个特定的数据库
+mycli mysql://<my_user>@<my_host>:<port>

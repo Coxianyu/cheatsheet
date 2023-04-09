@@ -2,6 +2,18 @@
 
 ; python 虚拟环境管理
 
+# 查看已经安装的 python 版本
+\ls $(pyenv root)/versions
+
+# 切换为某个特定的python版本
+pyenv global $(\ls $(pyenv root)/versions | fzf)
+
+# 查看当前使用的 pyenv 环境
+pyenv version
+
+# 安装 某个 python 版本
+pyenv install $(pyenv install -l | fzf)
+
 
 # pyenv 编译 python 环境, 包管理器为 apt
 apt install make build-essential libssl-dev zlib1g-dev \
